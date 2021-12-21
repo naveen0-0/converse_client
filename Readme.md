@@ -1,0 +1,1 @@
+This is client app for a fullstack chat application built with reactjs
