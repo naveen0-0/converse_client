@@ -1,0 +1,39 @@
+.auth{
+  background-color: rgb(11, 10, 27);
+  color: whitesmoke;
+  min-height: 100vh;
+}
+
+.authtitle{
+  text-align: center;
+  font-size: 40px;
+  padding: 20px 0px;
+  font-family: cursive;
+}
+
+.tabs{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.tab{
+  font-family: "Fira Code";
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 14px;
+  border: 1px solid grey;
+  border-radius: 9999999px;
+  color: grey;
+}
+
+.tabactive{
+  padding: 6px 14px;
+  font-family: "Fira Code";
+  font-size: 14px;
+  cursor: pointer;
+  color: cornflowerblue;
+  border: 1px solid cornflowerblue;
+  border-radius: 9999999px;
+}
