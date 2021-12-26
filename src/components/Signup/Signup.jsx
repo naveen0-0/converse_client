@@ -1,6 +1,7 @@
 import React,{ useState } from 'react'
 import styles from './Signup.module.css'
 import axios from 'axios'
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Signup({ setTabIndex }) {
   const [ username, setUsername ] = useState("")
@@ -10,7 +11,7 @@ export default function Signup({ setTabIndex }) {
 
   const formSubmit = async e => {
     e.preventDefault()
-    let { data } = await axios.post('http://localhost:5000/auth/signup',{ username, email, password })
+    let { data } = await axios.post('http://localhost:5000/auth/signup',{ username, email, password, chatId:uuidv4() })
     setFeedBack(data.feedback)
 
     if(data.operation){

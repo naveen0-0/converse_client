@@ -1,0 +1,47 @@
+.inputcontainer{
+  position: relative; 
+}
+
+.input{
+  width: 100%;
+  outline: none;
+  border: 1px solid#1C1E1F;
+  padding: 14px;
+  font-family: "Fira Code Medium";
+  background-color: #141414;
+  color: rgb(182, 182, 182);
+}
+
+.search{
+  display: block;
+  width: 15px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.friend{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid#1C1E1F;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.profileimg{
+  font-family: "Fira Code";
+  background-color: #0f0f0f;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid rgb(54, 54, 54);
+}
+
+.username {
+  font-family: "Fira Code";
+  padding: 0px 10px;
+  color: rgb(182, 182, 182);
+}

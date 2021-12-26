@@ -4,8 +4,9 @@ import { useDispatch } from 'react-redux'
 import messagesimg from '../../images/messenger.png'
 import groupimg from '../../images/group.png'
 import logoutimg from '../../images/logout.png'
+import adduserimg from '../../images/adduser.png'
 
-export default function SideBar({ setTabIndex }) {
+export default function SideBar({ setTabIndex, index }) {
   const dispatch = useDispatch()
 
   const Logout = () => {
@@ -17,7 +18,7 @@ export default function SideBar({ setTabIndex }) {
     <div className={styles.sidebar}>
 
       <div className={styles.categories}>
-        <div className={styles.category1}>
+        <div className={index ===0 ? styles.activecategory : styles.category1}>
           <img 
             src={messagesimg} 
             alt="Messages" 
@@ -26,13 +27,23 @@ export default function SideBar({ setTabIndex }) {
             onClick={() => setTabIndex(0)}
           />
         </div>
-        <div className={styles.category2}>
+        <div className={index ===1 ? styles.activecategory : styles.category2}>
           <img 
             src={groupimg} 
             alt="Group"  
             className={styles.category2img}
             title='Groups'
             onClick={() => setTabIndex(1)}
+          />
+        </div>
+
+        <div className={index === 2 ? styles.activecategory : styles.category3}>
+          <img 
+            src={adduserimg} 
+            alt="Add Friend"  
+            className={styles.category3img}
+            title='Add Friend'
+            onClick={() => setTabIndex(2)}
           />
         </div>
       </div>

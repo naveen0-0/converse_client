@@ -1,0 +1,122 @@
+.inputcontainer{
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.input{
+  flex: 1;
+  margin: 5px;
+  outline: none;
+  border: 1px solid#1C1E1F;
+  padding: 14px;
+  font-family: "Fira Code Medium";
+  border-radius: 5px;
+  background-color: #141414;
+  color: rgb(182, 182, 182);
+}
+
+.input:focus{
+  border: 1px solid#505558;
+}
+
+.search{
+  display: block;
+  width: 15px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.friendrequest{
+  margin: 5px;
+  border: 1px solid#1C1E1F;
+  border-radius: 5px;
+  padding: 10px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userinfo{
+  display: flex;
+  flex: 1;
+}
+
+.profileimg{
+  background-color: rgb(36, 36, 36);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Fira Code Medium";
+  color: rgb(139, 139, 139);
+  border: 1px solid rgb(63, 63, 63);
+}
+
+.username{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  font-family: "Fira Code Medium";
+  margin-left: 10px;
+  font-size: 14px
+}
+
+.action{
+  border: 1px solid#1C1E1F;
+  font-family: "Fira Code";
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 999999999px;
+  outline: none;
+  cursor: pointer;
+  background-color: #141414;
+  color: rgb(190, 190, 190);
+}
+
+.action:hover{
+  border: 1px solid#505558;
+}
+
+.accept, .decline {
+  outline: none;
+  background-color: #141414;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 1000px;
+  font-family: "Fira Code";
+  color: #868686;
+  cursor: pointer;
+  margin-left: 5px;
+  border: none;
+}
+
+.accept{
+  border: 1px solid rgba(100, 148, 237, 0.25);
+  color: cornflowerblue;
+}
+
+.decline{
+  border: 1px solid rgba(220, 20, 60, 0.25);
+  color: crimson;
+}
+
+.accept:hover{
+  background-color: rgba(100, 148, 237, 0.10);
+  color: rgb(192, 192, 192);
+}
+
+.decline:hover{
+  background-color: rgba(220, 20, 60, 0.10);
+  color: rgb(197, 197, 197);
+}
+
+.friend_requests{
+  font-family: "Fira Code";
+  padding: 5px;
+  font-weight: bold;
+}

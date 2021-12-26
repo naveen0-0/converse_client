@@ -1,0 +1,20 @@
+.friends{
+  display: flex;
+}
+
+.listOfFriends{
+  width: 300px;
+  border-right: 1px solid rgb(49, 49, 49);
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 200px;
+}
+
+.friendChat{
+  flex: 1;
+}
+
+.listOfFriends::-webkit-scrollbar{
+  width: 0px;
+}
