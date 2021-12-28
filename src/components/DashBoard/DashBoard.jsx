@@ -30,7 +30,7 @@ export default function DashBoard() {
 
   //@ Socket Connection
   useEffect(() => {
-    newSocket = io('http://localhost:5000',{ query : { chatId } })
+    newSocket = io('https://converse-1910.herokuapp.com',{ query : { chatId } })
     setSocket(newSocket)
     return () => {
       newSocket.close()
@@ -88,7 +88,7 @@ export default function DashBoard() {
   },[])
 
   const getFriends = async () => {
-    let { data } = await axios.post('http://localhost:5000/api/friends',{ username })
+    let { data } = await axios.post('https://converse-1910.herokuapp.com/api/friends',{ username })
     dispatch({ type : "UPDATE_FRIENDS",payload:data })
   }
 

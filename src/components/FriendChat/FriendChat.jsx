@@ -1,7 +1,6 @@
 import React,{ useEffect, useState } from 'react'
 import styles from './FriendChat.module.css'
 import { useSelector, useDispatch } from 'react-redux'
-import axios from 'axios'
 import Hero from '../Hero/Hero'
 import sendimg from '../../images/send.png'
 import Messages from '../Messages/Messages'

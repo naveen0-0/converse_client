@@ -13,7 +13,7 @@ export default function HomePage() {
   },[])
 
   const getUser = async () => {
-    let { data } = await axios.get('http://localhost:5000/auth/getuser',{ headers : { Authorization : localStorage.getItem('converse_1910_logintoken')}})
+    let { data } = await axios.get('https://converse-1910.herokuapp.com/auth/getuser',{ headers : { Authorization : localStorage.getItem('converse_1910_logintoken')}})
     if(data.operation){
       dispatch({ type:"UPDATE_USER",payload:data.user})
     }

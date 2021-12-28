@@ -11,7 +11,7 @@ export default function Signup({ setTabIndex }) {
 
   const formSubmit = async e => {
     e.preventDefault()
-    let { data } = await axios.post('http://localhost:5000/auth/signup',{ username, email, password, chatId:uuidv4() })
+    let { data } = await axios.post('https://converse-1910.herokuapp.com/auth/signup',{ username, email, password, chatId:uuidv4() })
     setFeedBack(data.feedback)
 
     if(data.operation){
