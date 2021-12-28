@@ -1,21 +1,27 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import styles from './Friends.module.css'
 import ListOfFriends from '../ListOfFriends/ListOfFriends'
 import FriendChat from '../FriendChat/FriendChat'
-import { useSelector } from 'react-redux'
+import personimg from '../../images/man.png'
 
 export default function Friends({ socket }) {
 
-  const { username } = useSelector(state => state. user)
+  const [ sidebarActive, setSidebarActive ] = useState(false)
 
   return (
     <div className={styles.friends}>
-      <div className={styles.listOfFriends}>
-        <ListOfFriends socket={socket}/>
+      <div className={sidebarActive? styles.listOfFriendsActive:styles.listOfFriends}>
+        <ListOfFriends socket={socket} setSidebarActive={setSidebarActive} sidebarActive={sidebarActive}/>
       </div>
+
       <div className={styles.friendChat}>
         <FriendChat socket={socket}/>
       </div>
+
+      <div className={styles.burger} onClick={() => setSidebarActive(!sidebarActive)}>
+        <img src={personimg} alt="Person" className={styles.burgerimg}/>
+      </div>
+
     </div>
   )
 }

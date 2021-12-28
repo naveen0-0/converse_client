@@ -2,8 +2,9 @@ import React,{ useState } from 'react'
 import styles from './ListOfFriends.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import searchpng from '../../images/search.png'
+import closepng from '../../images/close.png'
 
-export default function ListOfFriends() {
+export default function ListOfFriends({ setSidebarActive, sidebarActive }) {
   const dispatch = useDispatch()
   const friends = useSelector( state => state.friends );
   const { username } = useSelector(state => state.user)
@@ -27,7 +28,7 @@ export default function ListOfFriends() {
         {friends.map((friend, index) => {
           if(friend.requestAcceptedOrNot) {
             return (
-            <div key={index} className={styles.friend} onClick={() => dispatch({ type : "UPDATE_FRIEND", payload:friend })}>
+            <div key={index} className={styles.friend} onClick={() => {dispatch({ type : "UPDATE_FRIEND", payload:friend }) ; setSidebarActive(!sidebarActive)}}>
               <div className={styles.profileimg}>
                 {friend.friend1 === username ? friend.friend2[0].toUpperCase() : friend.friend1[0].toUpperCase()}
               </div>
@@ -37,6 +38,10 @@ export default function ListOfFriends() {
             </div>
           )}
         })}
+      </div>
+
+      <div className={styles.closeContainer} onClick={() => setSidebarActive(!sidebarActive)}>
+        <img src={closepng} alt="Close" className={styles.closeimg}/>
       </div>
 
     </div>

@@ -1,4 +1,4 @@
-.inputcontainer{
+.container{
   position: relative; 
 }
 
@@ -46,3 +46,29 @@
   padding: 0px 10px;
   color: rgb(182, 182, 182);
 }
+
+.closeContainer{
+  display: none;
+}
+
+/* @media screen and (max-width:1000px){
+  .closeContainer{
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    right: 10px;
+    bottom:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1C1E1F;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+  }
+  
+  .closeimg{
+    width: 15px;
+    height: 15px;
+  }
+} */

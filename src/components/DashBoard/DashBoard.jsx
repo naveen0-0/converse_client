@@ -78,7 +78,7 @@ export default function DashBoard() {
   useEffect(() => {
     newSocket.on("send_msg_sender", data => {
         dispatch({ type:"ADD_MESSAGE", payload:data})
-
+        dispatch({ type:"ADD_MESSAGE_IN_FRIENDS", payload:data})
     })
     
     newSocket.on("send_msg_receiver", data => {

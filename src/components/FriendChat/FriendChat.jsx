@@ -6,6 +6,7 @@ import Hero from '../Hero/Hero'
 import sendimg from '../../images/send.png'
 import Messages from '../Messages/Messages'
 
+
 export default function FriendChat({ socket }) {
   const dispatch = useDispatch()
   const selectedFriends = useSelector(state => state.selectedFriends)
