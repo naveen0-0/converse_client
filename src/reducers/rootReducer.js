@@ -8,5 +8,5 @@ export const rootReducer = combineReducers({
   user:userReducer,
   friends : friendsReducer,
   selectedFriends:selectedFriendsReducer,
-  messages : messagesReducer
+  // messages : messagesReducer
 })

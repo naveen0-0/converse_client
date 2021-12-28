@@ -4,28 +4,29 @@ import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 import Hero from '../Hero/Hero'
 import sendimg from '../../images/send.png'
+import Messages from '../Messages/Messages'
 
-export default function FriendChat() {
+export default function FriendChat({ socket }) {
   const dispatch = useDispatch()
   const selectedFriends = useSelector(state => state.selectedFriends)
   const { username,chatId } = useSelector(state => state.user)
-  const messages = useSelector(state => state.messages)
   const [ message, setMessage ] = useState("")
 
-  const getMessages = async () => {
-    let { data } = await axios.post('http://localhost:5000/api/messages',{ selectedFriendsId : selectedFriends._id })
-    dispatch({ type:"UPDATE_MESSAGES" , payload:data }) 
-  }
 
   const sendMessage = (e) => {
     if(e.key === 'Enter' && message.trim()){
-      dispatch({ type:"ADD_MESSAGE", payload:message })
+      socket.emit('send_msg', {
+        id:selectedFriends._id,
+        sender:username,
+        receiver:selectedFriends.friend1 === username?selectedFriends.friend2 : selectedFriends.friend1,
+        message : message,
+        time : new Date(),
+        chatId:chatId,
+        friendChatId:selectedFriends.chatId1 === chatId?selectedFriends.chatId2 : selectedFriends.chatId1
+      })
+      setMessage("")
     }
   }
-
-  useEffect(() => {
-    getMessages()
-  },[selectedFriends])
 
   return (
     <div>
@@ -38,7 +39,7 @@ export default function FriendChat() {
           </div>
 
           <div className={styles.messages}>
-            {messages.map((message, index) => <div key={index}>{message}</div>)}
+            <Messages/>
           </div>
 
           <div className={styles.inputcontainer}>

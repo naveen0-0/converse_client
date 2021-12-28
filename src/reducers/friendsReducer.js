@@ -23,6 +23,15 @@ export const friendsReducer = (state = initialState,action) => {
       case "REMOVE_A_FRIEND":
         return state.filter((friend) => friend._id !== action.payload)
 
+      case "ADD_MESSAGE_IN_FRIENDS":
+        return state.map((friend) => {
+          if(friend._id === action.payload.id){
+            friend.messages.push(action.payload.info)
+            return friend
+          }
+          return friend
+        })
+
       default:
           return state;
   }

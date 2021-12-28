@@ -10,7 +10,7 @@ export default function ListOfFriends() {
   const [ searchText, setSearchText ] = useState("")
 
   return (
-    <div>
+    <div className={styles.container}>
 
       <div className={styles.inputcontainer}>
         <input 
@@ -35,7 +35,6 @@ export default function ListOfFriends() {
                 {friend.friend1 === username ? friend.friend2 : friend.friend1}
               </div>
             </div>
-
           )}
         })}
       </div>

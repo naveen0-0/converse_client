@@ -10,7 +10,8 @@ import axios from 'axios'
 
 let newSocket;
 export default function DashBoard() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  const selectedFriends = useSelector(state => state.selectedFriends)
 
   //@ AddFriend state variable
   const [ text, setText ] = useState("")
@@ -71,6 +72,18 @@ export default function DashBoard() {
     
     newSocket.on('friend_request_declined_receiver', data => {
       dispatch({ type : 'REMOVE_A_FRIEND', payload : data })
+    })
+  },[])
+
+  useEffect(() => {
+    newSocket.on("send_msg_sender", data => {
+        dispatch({ type:"ADD_MESSAGE", payload:data})
+
+    })
+    
+    newSocket.on("send_msg_receiver", data => {
+        dispatch({ type:"ADD_MESSAGE", payload:data})
+        dispatch({ type:"ADD_MESSAGE_IN_FRIENDS", payload:data})
     })
   },[])
 

@@ -4,6 +4,7 @@
   flex-direction: column;
   font-family: "Fira Code";
   min-height: 200px;
+  /* width: 100%; */
 }
 
 .banner{
@@ -40,13 +41,15 @@
 }
 
 .inputcontainer{
-  position: relative; 
+  position: relative;
+  margin: 0px 5px;
 }
 
 .input{
   width: 100%;
   outline: none;
-  border: 1px solid#1C1E1F;
+  border: 1px solid#6d6f70;
+  border-radius: 9999999px;
   padding: 14px;
   font-family: "Fira Code Medium";
   background-color: #141414;
