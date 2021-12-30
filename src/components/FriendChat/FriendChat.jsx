@@ -42,7 +42,7 @@ export default function FriendChat({ socket }) {
             <Messages/>
           </div>
 
-          <div className={styles.input_main_container}>
+
             <div className={styles.inputcontainer}>
               <input 
                 type="text"
@@ -55,7 +55,7 @@ export default function FriendChat({ socket }) {
               />
               <img src={sendimg} alt="Search" className={styles.search}/>
             </div>
-          </div>
+
 
 
 

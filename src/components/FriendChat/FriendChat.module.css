@@ -9,9 +9,6 @@
 }
 
 .banner{
-  position: absolute;
-  top: 0px;
-  width: 100%;
   display: flex;
   align-items: center;
   background-color: rgb(22, 22, 22);
@@ -44,11 +41,7 @@
   color: rgb(126, 126, 126);
 }
 
-.input_main_container{
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-}
+
 
 .inputcontainer{
   position: relative;
