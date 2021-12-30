@@ -42,18 +42,21 @@ export default function FriendChat({ socket }) {
             <Messages/>
           </div>
 
-          <div className={styles.inputcontainer}>
-            <input 
-              type="text"
-              placeholder="Enter Message...."
-              value={message}
-              onChange={e => setMessage(e.target.value)}
-              className={styles.input}
-              autoFocus={true}
-              onKeyPress={sendMessage}
-            />
-            <img src={sendimg} alt="Search" className={styles.search}/>
+          <div className={styles.input_main_container}>
+            <div className={styles.inputcontainer}>
+              <input 
+                type="text"
+                placeholder="Enter Message...."
+                value={message}
+                onChange={e => setMessage(e.target.value)}
+                className={styles.input}
+                autoFocus={true}
+                onKeyPress={sendMessage}
+              />
+              <img src={sendimg} alt="Search" className={styles.search}/>
+            </div>
           </div>
+
 
 
         </div>
