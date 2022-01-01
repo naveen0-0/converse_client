@@ -1,9 +1,9 @@
 import React,{ useEffect, useRef } from 'react'
 import { useSelector } from 'react-redux'
-import styles from './Messages.module.css'
+import styles from './GroupMessages.module.css'
 
-export default function Messages() {
-  const { messages } = useSelector(state => state.selectedFriends)
+export default function GroupMessages() {
+  const { messages } = useSelector(state => state.selectedGroup)
   const { username } = useSelector(state => state.user)
   const messagesEndRef = useRef(null)
 

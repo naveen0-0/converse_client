@@ -7,12 +7,12 @@ import { useSelector } from 'react-redux'
 export default function AddFriend({ socket, text, setText, user, setUser, feedback, setFeedback, statusNum, setStatusNum }) {
   const { username, chatId } = useSelector(state => state.user)
   const friends = useSelector(state => state.friends)
-
+  const { serverUrl }  = useSelector(state => state.serverUrl)
 
 
   const SearchForAFriend = async e => {
     if(e.key === "Enter" && text.trim() && text.trim() !== username){
-      let { data } = await axios.post("https://converse-1910.herokuapp.com/api/search", { text:text.trim(), user:username })
+      let { data } = await axios.post(`${serverUrl}/api/search`, { text:text.trim(), user:username })
       setUser(data.user)
       setFeedback(data.feedback)
       setStatusNum(data.statusnum)

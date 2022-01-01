@@ -11,10 +11,14 @@
   outline: none;
   border: none;
   padding: 8px 14px 8px 0px;
-  background-color: rgb(11, 10, 27);
+  background-color: rgb(26, 26, 27);
   color: rgb(161, 161, 161);
   border-bottom: 1px solid grey;
   font-family: "Fira Code";
+}
+
+.username:focus,.password:focus{
+  border-bottom: 1px solid cornflowerblue;
 }
 
 .submit{

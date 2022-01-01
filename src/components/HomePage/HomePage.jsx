@@ -6,6 +6,7 @@ import axios from 'axios'
 
 export default function HomePage() {
   const { loggedIn } = useSelector(state => state.user)
+  const { serverUrl } = useSelector(state => state.serverUrl)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -13,7 +14,7 @@ export default function HomePage() {
   },[])
 
   const getUser = async () => {
-    let { data } = await axios.get('https://converse-1910.herokuapp.com/auth/getuser',{ headers : { Authorization : localStorage.getItem('converse_1910_logintoken')}})
+    let { data } = await axios.get(`${serverUrl}/auth/getuser`,{ headers : { Authorization : localStorage.getItem('converse_1910_logintoken')}})
     if(data.operation){
       dispatch({ type:"UPDATE_USER",payload:data.user})
     }

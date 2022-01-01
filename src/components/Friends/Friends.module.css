@@ -4,7 +4,7 @@
 }
 
 .listOfFriends{
-  min-width: 300px;
+  width: 300px;
   border-right: 1px solid rgb(49, 49, 49);
   height: 100vh;
   overflow-y: auto;
@@ -12,7 +12,7 @@
 }
 
 .listOfFriendsActive{
-  min-width: 300px;
+  width: 300px;
   border-right: 1px solid rgb(49, 49, 49);
   height: 100vh;
   overflow-y: auto;
@@ -60,7 +60,7 @@
     z-index: 1;
     background-color: rgb(17, 17, 17);
     transition: transform 0.5s ease-out;
-    width: 100%;
+    width: 80%;
     height: 100vh;
     overflow-y: auto;
     min-height: 200px;
@@ -73,7 +73,7 @@
     z-index: 1;
     background-color: rgb(17, 17, 17);
     transition: transform 0.5s ease-out;
-    width: 100%;
+    width: 80%;
     border-right: 1px solid rgb(49, 49, 49);
     height: 100vh;
     overflow-y: auto;

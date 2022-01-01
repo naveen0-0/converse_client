@@ -27,20 +27,26 @@ export default function DashBoard() {
                     ]
   const [ tabIndex, setTabIndex ] = useState(0)
   const { chatId, username } = useSelector(state => state.user)
+  const { serverUrl } = useSelector(state => state.serverUrl)
 
   //@ Socket Connection
   useEffect(() => {
-    newSocket = io('https://converse-1910.herokuapp.com',{ query : { chatId } })
+    newSocket = io(serverUrl,{ query : { chatId } })
     setSocket(newSocket)
     return () => {
       newSocket.close()
       newSocket.off()
     }
   },[])
+
+  useEffect(() => {
+    newSocket.emit('join_groups',{ username })
+  },[])
   
-  //@ Getting Friends
+  //@ Getting Friends And Groups
   useEffect(() => {
     getFriends();
+    getGroups();
   },[])
   
   //@ Friend Request Event
@@ -55,6 +61,7 @@ export default function DashBoard() {
     })
   },[])
 
+  //@ Friend Request Accepting Event
   useEffect(() => {
     newSocket.on('friend_request_accepted_sender', data => {
       dispatch({ type : 'MAKE_A_FRIEND', payload : data })
@@ -65,6 +72,7 @@ export default function DashBoard() {
     })
   },[])
 
+  //@ Friend Request Declining Event
   useEffect(() => {
     newSocket.on('friend_request_declined_sender', data => {
       dispatch({ type : 'REMOVE_A_FRIEND', payload : data })
@@ -75,6 +83,7 @@ export default function DashBoard() {
     })
   },[])
 
+  //@ Individual Messages Sending Event
   useEffect(() => {
     newSocket.on("send_msg_sender", data => {
         dispatch({ type:"ADD_MESSAGE", payload:data})
@@ -82,14 +91,27 @@ export default function DashBoard() {
     })
     
     newSocket.on("send_msg_receiver", data => {
-        dispatch({ type:"ADD_MESSAGE", payload:data})
-        dispatch({ type:"ADD_MESSAGE_IN_FRIENDS", payload:data})
+      dispatch({ type:"ADD_MESSAGE", payload:data})
+      dispatch({ type:"ADD_MESSAGE_IN_FRIENDS", payload:data})
+    })
+  },[])
+  
+  //@ Groups Sending Messages
+  useEffect(() => {
+    newSocket.on('group_send_msg', data => {
+      dispatch({ type:"ADD_MESSAGE_IN_GROUP", payload:data})
+      dispatch({ type:"ADD_MESSAGE_IN_GROUPS", payload:data})
     })
   },[])
 
   const getFriends = async () => {
-    let { data } = await axios.post('https://converse-1910.herokuapp.com/api/friends',{ username })
+    let { data } = await axios.post(`${serverUrl}/api/friends`,{ username })
     dispatch({ type : "UPDATE_FRIENDS",payload:data })
+  }
+
+  const getGroups = async () => {
+    let { data } = await axios.post(`${serverUrl}/api/groups`,{ username })
+    dispatch({ type : "UPDATE_GROUPS",payload:data })
   }
 
 

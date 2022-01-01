@@ -1,0 +1,30 @@
+.msgcontainer{
+  padding: 5px;
+}
+
+.user{
+  background-color: rgba(100, 148, 237, 0.1);
+  margin: 10px 0px 10px auto;
+  text-align: right;
+  border-radius: 20px 25px 0px 20px;
+  border: 1px solid rgba(100, 148, 237, 0.384);
+}
+
+
+.friend{
+  background-color: rgba(221, 133, 17, 0.1);
+  margin: 10px auto 10px 0px;
+  text-align: left;
+  border-radius: 25px 20px 20px 0px;
+  border: 1px solid rgba(220, 60, 20, 0.596);
+}
+
+.user,.friend{
+  font-weight: 500;
+  word-break: break-all;
+  color: rgb(158, 158, 158);
+  max-width: 70%;
+  width: max-content;
+  font-size: 14px;
+  padding: 5px 10px;
+}

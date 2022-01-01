@@ -1,0 +1,92 @@
+.container{
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputcontainer{
+  border-bottom: 1px solid #26292b;
+  padding-bottom: 10px;
+}
+
+.input{
+  display: block;
+  width: 95%;
+  margin: 5px auto;
+  outline: none;
+  border: 1px solid#1C1E1F;
+  border-radius: 5px;
+  padding: 14px;
+  font-family: "Fira Code Medium";
+  background-color: #141414;
+  color: rgb(182, 182, 182);
+}
+
+.input:focus{
+  border: 1px solid#333638;
+}
+
+.create_group{
+  display: block;
+  outline: none;
+  border: 1px solid cornflowerblue;
+  color: rgb(124, 124, 124);
+  padding: 10px 0px;
+  border-radius: 5px;
+  font-family: "Fira Code";
+  background-color: transparent;
+  width: 95%;
+  margin: auto;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.create_group:hover{
+  border: 1px solid rgb(102, 156, 255);
+  color: rgb(177, 177, 177);
+}
+
+.create_group:active{
+  background-color: cornflowerblue;
+  color: black;
+  font-weight: bold;
+}
+
+.groups{
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.feedback{
+  text-align: center;
+  color: rgb(199, 33, 66);
+  font-family: "Fira Code";
+  margin-top: 10px;
+}
+
+.group{
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #26292b;
+  cursor: pointer;
+}
+
+.profileimg{
+  background-color: #8d8d8d;
+  font-family: "Fira Code";
+  font-weight: bold;
+  border-radius: 50%;
+  min-width: 30px;
+  min-height: 30px;
+  display: grid;
+  place-items: center;
+}
+
+.groupname{
+  font-family: "Fira Code";
+  color: rgb(110, 110, 110);
+  padding-left: 10px;
+}
