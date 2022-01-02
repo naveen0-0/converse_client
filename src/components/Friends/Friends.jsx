@@ -4,9 +4,9 @@ import ListOfFriends from '../ListOfFriends/ListOfFriends'
 import FriendChat from '../FriendChat/FriendChat'
 import personimg from '../../images/man.png'
 
-export default function Friends({ socket }) {
+export default function Friends({ socket, sidebarActive, setSidebarActive }) {
 
-  const [ sidebarActive, setSidebarActive ] = useState(false)
+
 
   return (
     <div className={styles.friends}>
@@ -17,11 +17,6 @@ export default function Friends({ socket }) {
       <div className={styles.friendChat}>
         <FriendChat socket={socket}/>
       </div>
-
-      <div className={styles.burger} onClick={() => setSidebarActive(!sidebarActive)}>
-        <img src={personimg} alt="Person" className={styles.burgerimg}/>
-      </div>
-
     </div>
   )
 }

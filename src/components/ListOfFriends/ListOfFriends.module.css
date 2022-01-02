@@ -2,7 +2,15 @@
   position: relative; 
 }
 
+.inputcontainer{
+  width: 95%;
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+}
+
 .input{
+  border-radius: 5px;
   width: 100%;
   outline: none;
   border: 1px solid#1C1E1F;
@@ -12,13 +20,16 @@
   color: rgb(182, 182, 182);
 }
 
+.input:focus{
+  border: 1px solid#333638;
+}
 
 .search{
   display: block;
   width: 15px;
   position: absolute;
   top: 15px;
-  right: 15px;
+  right: 20px;
 }
 
 .friend{
@@ -45,6 +56,10 @@
   font-family: "Fira Code";
   padding: 0px 10px;
   color: rgb(182, 182, 182);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .closeContainer{

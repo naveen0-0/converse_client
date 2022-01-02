@@ -89,4 +89,8 @@
   font-family: "Fira Code";
   color: rgb(110, 110, 110);
   padding-left: 10px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

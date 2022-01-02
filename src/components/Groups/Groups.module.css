@@ -34,26 +34,6 @@
 }
 
 @media screen and (max-width:1000px){
-  .burger{
-    display: block;
-    font-family: "Fira Code";
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: rgb(77, 75, 75);
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-
-  .burgerimg{
-    width: 25px;
-    height: 25px;
-  }
 
   .listOfFriends{
     position: absolute;

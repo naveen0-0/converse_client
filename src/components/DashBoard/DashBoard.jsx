@@ -12,6 +12,8 @@ let newSocket;
 export default function DashBoard() {
   const dispatch = useDispatch();
   const selectedFriends = useSelector(state => state.selectedFriends)
+  const [ GroupSidebarActive, setGroupSidebarActive ] = useState(false)
+  const [ FriendsSidebarActive, setFriendsSidebarActive ] = useState(false)
 
   //@ AddFriend state variable
   const [ text, setText ] = useState("")
@@ -21,8 +23,8 @@ export default function DashBoard() {
 
   const [ socket, setSocket ] = useState(null);
   const components = [ 
-                      <Friends socket={socket}/>, 
-                      <Groups socket={socket}/>, 
+                      <Friends socket={socket} sidebarActive={FriendsSidebarActive} setSidebarActive={setFriendsSidebarActive}/>, 
+                      <Groups socket={socket} sidebarActive={GroupSidebarActive} setSidebarActive={setGroupSidebarActive}/>, 
                       <AddFriend socket={socket} text={text} setText={setText} user={user} setUser={setUser} feedback={feedback} setFeedback={setFeedback} statusNum={statusNum} setStatusNum={setStatusNum}/> 
                     ]
   const [ tabIndex, setTabIndex ] = useState(0)
@@ -104,6 +106,13 @@ export default function DashBoard() {
     })
   },[])
 
+  //@ Adding SomeOne to the group
+  useEffect(() => {
+    newSocket.on('add_to_the_group', data => {
+      console.log(data)
+    })
+  },[])
+
   const getFriends = async () => {
     let { data } = await axios.post(`${serverUrl}/api/friends`,{ username })
     dispatch({ type : "UPDATE_FRIENDS",payload:data })
@@ -118,7 +127,14 @@ export default function DashBoard() {
 
   return (
     <div className={styles.dashboard}>
-      <SideBar setTabIndex={setTabIndex} index={tabIndex}/>
+      <SideBar 
+        setTabIndex={setTabIndex} 
+        index={tabIndex} 
+        gsidebarActive={GroupSidebarActive} 
+        gsetSidebarActive={setGroupSidebarActive}
+        fsidebarActive={FriendsSidebarActive} 
+        fsetSidebarActive={setFriendsSidebarActive}
+      />
       <div className={styles.component}>
         {components[tabIndex]}
       </div>

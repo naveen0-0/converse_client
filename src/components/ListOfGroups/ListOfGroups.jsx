@@ -52,7 +52,7 @@ export default function ListOfGroups({ setSidebarActive, sidebarActive, socket }
 
       <div className={styles.groups}>
         {groups.map((group, index) => 
-          <div key={index} className={styles.group} onClick={() => { dispatch({ type:"UPDATE_GROUP", payload: group });setSidebarActive(!sidebarActive) }}>
+          <div title={group.groupName} key={index} className={styles.group} onClick={() => { dispatch({ type:"UPDATE_GROUP", payload: group });setSidebarActive(!sidebarActive) }}>
             <div className={styles.profileimg}>{group.groupName[0]}</div>
             <div className={styles.groupname}>{group.groupName}</div>
           </div>
