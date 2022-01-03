@@ -38,6 +38,11 @@
   cursor: pointer;
 }
 
+.category1img,.category2img,.category3img,.logoutimg{
+  background: transparent;
+  outline: none;
+}
+
 .logout{
   padding: 5px;
   display: flex;
