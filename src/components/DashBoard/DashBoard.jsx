@@ -20,11 +20,12 @@ export default function DashBoard() {
   const [ user, setUser ] = useState(null)
   const [ feedback, setFeedback ] = useState("")
   const [ statusNum, setStatusNum ] = useState(null)
+  const [ btnText, setBtnText ] = useState("Add")
 
   const [ socket, setSocket ] = useState(null);
   const components = [ 
                       <Friends socket={socket} sidebarActive={FriendsSidebarActive} setSidebarActive={setFriendsSidebarActive}/>, 
-                      <Groups socket={socket} sidebarActive={GroupSidebarActive} setSidebarActive={setGroupSidebarActive}/>, 
+                      <Groups socket={socket} sidebarActive={GroupSidebarActive} setSidebarActive={setGroupSidebarActive} btnText={btnText} setBtnText={setBtnText}/>, 
                       <AddFriend socket={socket} text={text} setText={setText} user={user} setUser={setUser} feedback={feedback} setFeedback={setFeedback} statusNum={statusNum} setStatusNum={setStatusNum}/> 
                     ]
   const [ tabIndex, setTabIndex ] = useState(0)
@@ -108,8 +109,23 @@ export default function DashBoard() {
 
   //@ Adding SomeOne to the group
   useEffect(() => {
-    newSocket.on('add_to_the_group', data => {
-      console.log(data)
+    newSocket.on('add_user_to_the_group', data => {
+      newSocket.emit('add_user_to_the_group_success', data)
+    })
+  },[])
+
+  useEffect(() => {
+    newSocket.on('add_user_to_the_group_in_redux', data => {
+      console.log(data);
+      dispatch({ type : "ADD_USER_TO_THE_SELECTED_GROUP_IN_REDUX", payload : data})
+      dispatch({ type : "ADD_USER_TO_THE_GROUPS_IN_REDUX", payload : data})
+      setBtnText("User Added")
+    })
+  },[])
+
+  useEffect(() => {
+    newSocket.on('add_group_to_the_user_in_redux', data => {
+      dispatch({ type:"ADD_GROUP", payload: data })
     })
   },[])
 

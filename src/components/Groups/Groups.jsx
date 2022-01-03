@@ -4,9 +4,7 @@ import ListOfGroups from '../ListOfGroups/ListOfGroups'
 import GroupChat from '../GroupChat/GroupChat'
 import personimg from '../../images/man.png'
 
-export default function Groups({ socket,sidebarActive, setSidebarActive }) {
-
-
+export default function Groups({ socket,sidebarActive, setSidebarActive, btnText, setBtnText }) {
 
   return (
     <div className={styles.friends}>
@@ -14,7 +12,7 @@ export default function Groups({ socket,sidebarActive, setSidebarActive }) {
         <ListOfGroups socket={socket} setSidebarActive={setSidebarActive} sidebarActive={sidebarActive}/>
       </div>
       <div className={styles.friendChat}>
-        <GroupChat socket={socket}/>
+        <GroupChat socket={socket} btnText={btnText} setBtnText={setBtnText}/>
       </div>
     </div>
   )

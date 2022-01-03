@@ -15,6 +15,17 @@ export const selectedGroupReducer = (state = initialState,action) => {
             ]
           } 
         }
+        
+      case "ADD_USER_TO_THE_SELECTED_GROUP_IN_REDUX":
+        if(state.groupId === action.payload.groupId){
+          return {
+            ...state,
+            users : [
+              ...state.users, 
+              { username:action.payload.username , role : "member" } 
+            ]
+          } 
+        }
 
       default:
         return state;

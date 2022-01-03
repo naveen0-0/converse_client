@@ -16,6 +16,15 @@ export const groupsReducer = (state = initialState,action) => {
         }
         return group
       })
+      
+    case "ADD_USER_TO_THE_GROUPS_IN_REDUX":
+      return state.map((group) => {
+        if(group.groupId === action.payload.groupId){
+          group.users.push({ username : action.payload.username, role : "member" })
+          return group
+        }
+        return group
+      })
     
     default:
       return state;
