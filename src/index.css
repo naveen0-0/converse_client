@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
-*::selection{
+/* *::selection{
   background:transparent;
-}
+} */
 
 html, body{
   height: 100vh;
