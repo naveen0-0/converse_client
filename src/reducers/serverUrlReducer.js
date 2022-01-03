@@ -1,5 +1,5 @@
 const initialState = {
-  serverUrl : "http://localhost:5000",
+  serverUrl : "https://converse-1910.herokuapp.com",
 }
 
 export const serverUrlReducer = (state = initialState,action) => {
