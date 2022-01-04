@@ -46,6 +46,10 @@
   background: transparent;
   outline: none;
 }
+.category1img:focus,.category2img:focus,.category3img:focus,.logoutimg:focus{
+  background: transparent;
+  outline: none;
+}
 
 .logout{
   padding: 5px;
