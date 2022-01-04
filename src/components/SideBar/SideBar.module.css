@@ -38,18 +38,6 @@
   cursor: pointer;
 }
 
-.category1img::selection,.category2img::selection,.category3img::selection,.logoutimg::selection{
-  background: transparent;
-  outline: none;
-}
-.category1img:active,.category2img:active,.category3img:active,.logoutimg:active{
-  background: transparent;
-  outline: none;
-}
-.category1img:focus,.category2img:focus,.category3img:focus,.logoutimg:focus{
-  background: transparent;
-  outline: none;
-}
 
 .logout{
   padding: 5px;
