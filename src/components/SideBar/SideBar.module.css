@@ -38,7 +38,7 @@
   cursor: pointer;
 }
 
-.category1img,.category2img,.category3img,.logoutimg{
+.category1img::selection,.category2img::selection,.category3img::selection,.logoutimg::selection{
   background: transparent;
   outline: none;
 }
