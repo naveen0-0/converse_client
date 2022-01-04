@@ -42,6 +42,10 @@
   background: transparent;
   outline: none;
 }
+.category1img:active,.category2img:active,.category3img:active,.logoutimg:active{
+  background: transparent;
+  outline: none;
+}
 
 .logout{
   padding: 5px;
