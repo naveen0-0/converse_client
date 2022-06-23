@@ -3,6 +3,7 @@ import styles from './Signup.module.css'
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector } from 'react-redux'
+import authen1 from '../../images/authen1.svg'
 
 export default function Signup({ setTabIndex }) {
   const [ username, setUsername ] = useState("")
@@ -25,37 +26,48 @@ export default function Signup({ setTabIndex }) {
 
   return (
     <div className={styles.signup}>
-      <div className={styles.feedback}>{feedback}</div>
-      <form className={styles.form} onSubmit={formSubmit}>
-        <input 
-          type="text" 
-          placeholder='Enter your username' 
-          autoFocus={true} 
-          required 
-          value={username} 
-          onChange={e => setUsername(e.target.value)}
-          className={styles.username}
-          />
 
-        <input 
-          type="text" 
-          placeholder='Enter your email' 
-          required 
-          value={email} 
-          onChange={e => setEmail(e.target.value)}
-          className={styles.email}
-          />
+      <div className={styles.first}>
+        <img src={authen1} alt="Authen1" className={styles.authen1}/>
+      </div>
 
-        <input 
-          type="text" 
-          placeholder='Enter your password' 
-          required 
-          value={password} 
-          onChange={e => setPassword(e.target.value)}
-          className={styles.password}
-          />
-        <button className={styles.submit}>Create account</button>
-      </form>
+      <div className={styles.second}>
+        <div className={styles.feedback}>{feedback}</div>
+        <form className={styles.form} onSubmit={formSubmit} autoComplete="off">
+          <input 
+            type="text" 
+            placeholder='Enter your username' 
+            autoFocus={true} 
+            required 
+            value={username} 
+            onChange={e => setUsername(e.target.value)}
+            className={styles.username}
+            autoComplete="off"
+            />
+
+          <input 
+            type="text" 
+            placeholder='Enter your email' 
+            required 
+            value={email} 
+            onChange={e => setEmail(e.target.value)}
+            className={styles.email}
+            autoComplete="off"
+            />
+
+          <input 
+            autoComplete="off"
+            type="text" 
+            placeholder='Enter your password' 
+            required 
+            value={password} 
+            onChange={e => setPassword(e.target.value)}
+            className={styles.password}
+            />
+          <button className={styles.submit}>Create account</button>
+        </form>
+      </div>
+
     </div>
   )
 }

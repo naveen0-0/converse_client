@@ -33,7 +33,7 @@
   font-family: "Fira Code";
   font-size: 14px;
   cursor: pointer;
-  color: cornflowerblue;
-  border: 1px solid cornflowerblue;
+  color: rgb(235, 235, 235);
   border-radius: 9999999px;
+  background: rgb(100, 132, 237)
 }

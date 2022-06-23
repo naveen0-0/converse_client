@@ -1,6 +1,9 @@
+const serverUrl = "https://converse-1910.herokuapp.com"
+
 const initialState = {
-  serverUrl : "https://converse-1910.herokuapp.com",
+  serverUrl: serverUrl,
 }
+
 
 export const serverUrlReducer = (state = initialState,action) => {
   switch (action.type) {

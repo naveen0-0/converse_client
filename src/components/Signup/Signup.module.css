@@ -1,5 +1,24 @@
+.signup{
+  display: flex;
+  margin-top: 50px;
+}
+
+.first{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.authen1{
+  width: 80%;
+}
+
+.second{
+  width: 100%;
+}
+
 .form{
-  width: 90%;
+  width: 95%;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -7,18 +26,21 @@
   min-height: 300px;
 }
 
+
 .username,.email,.password{
-  outline: none;
-  border: none;
-  padding: 8px 14px 8px 0px;
-  background-color: rgb(26, 26, 27);
-  color: rgb(161, 161, 161);
-  border-bottom: 1px solid grey;
-  font-family: "Fira Code";
+    outline: none;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 999999px;
+    font-family: 'Fira Code', monospace;
+    background-color: rgb(19, 18, 18);
+    color: whitesmoke;
+    width: 100%;
+    border: 1px solid rgb(19, 18, 18);
 }
 
 .username:focus,.email:focus,.password:focus{
-  border-bottom: 1px solid cornflowerblue;
+  border: 1px solid rgb(43, 42, 42);
 }
 
 .submit{
@@ -37,4 +59,16 @@
   font-family: "Fira Code";
   margin: 10px 0px;
   color: cornflowerblue;
+}
+
+@media only screen and (max-width: 900px) {
+  .first {
+    display: none;
+  }
+
+  .second{
+    width: 95%;
+    margin: auto;
+  }
+
 }
