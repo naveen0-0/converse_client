@@ -5,14 +5,14 @@
   font-family: "Fira Code";
   min-height: 200px;
   position: relative;
+  background-color: rgb(20, 20, 20);
 }
 
 .banner{
   display: flex;
   align-items: center;
-  background-color: rgb(22, 22, 22);
+  background: linear-gradient(-315deg, #34073d, #531b0f);
   padding: 14px;
-  border-bottom: 1px solid rgb(54, 54, 54);
   position: relative;
 }
 
@@ -30,7 +30,6 @@
 }
 
 .modal{
-  border: 1px solid rgb(54, 54, 54);
   opacity: 0;
   position: absolute;
   top: 110%;
@@ -38,14 +37,13 @@
   width: 95%;
   margin: 0px 5px;
   overflow: auto;
-  background-color: rgb(22, 22, 22);
+  background: linear-gradient(-315deg, #34073d, #531b0f);
   padding: 10px;
   border-radius: 5px;
   transition: opacity 200ms ease-in-out;
 }
 
 .modalactive{
-  border: 1px solid rgb(54, 54, 54);
   opacity: 1;
   position: absolute;
   top: 110%;
@@ -53,7 +51,7 @@
   width: 95%;
   margin: 0px 5px;
   overflow: auto;
-  background-color: rgb(22, 22, 22);
+  background: linear-gradient(-315deg, #34073d, #531b0f);
   padding: 10px;
   border-radius: 5px;
   transition: opacity 200ms ease-in-out;
@@ -82,11 +80,11 @@
 .addfriend{
   width: 100%;
   outline: none;
-  border: 1px solid rgb(54, 54, 54);
+  border: none;
   border-radius: 9999999px;
   padding: 10px 14px;
   font-family: "Fira Code Medium";
-  background-color: rgb(22, 22, 22);
+  background-color: rgb(12, 12, 12);
   color: rgb(182, 182, 182);
 }
 
@@ -109,20 +107,20 @@
 
 .profileimg{
   font-family: "Fira Code";
-  background-color: #0f0f0f;
-  min-width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  border: 1px solid rgb(54, 54, 54);
+    background-color: #0f0f0f;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: rgb(182, 173, 173);
 }
 
 .username {
   font-family: "Fira Code";
-  padding: 0px 10px;
-  color: rgb(182, 182, 182);
+    padding: 0px 10px;
+    color: rgb(182, 182, 182);
 }
 
 .inputcontainer{
@@ -133,12 +131,12 @@
 .input{
   width: 100%;
   outline: none;
-  border: 1px solid#6d6f70;
   border-radius: 9999999px;
   padding: 14px;
   font-family: "Fira Code Medium";
-  background-color: #141414;
+  background-color: rgb(12, 12, 12);
   color: rgb(182, 182, 182);
+  border: none;
 }
 
 .search{

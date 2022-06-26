@@ -10,18 +10,18 @@
 }
 
 .input{
-  border-radius: 5px;
+  border-radius: 99999999px;
   width: 100%;
   outline: none;
   border: 1px solid#1C1E1F;
   padding: 14px;
   font-family: "Fira Code Medium";
-  background-color: #141414;
+  background-color: #0f0f0f;
   color: rgb(182, 182, 182);
 }
 
 .input:focus{
-  border: 1px solid#333638;
+  border: 1px solid rgb(36, 53, 85);
 }
 
 .search{
@@ -29,27 +29,37 @@
   width: 15px;
   position: absolute;
   top: 15px;
-  right: 20px;
+  right: 30px;
+}
+
+.friends{
+  padding: 10px;
 }
 
 .friend{
   display: flex;
   align-items: center;
-  border-bottom: 1px solid#1C1E1F;
   padding: 10px;
   cursor: pointer;
+  border-radius: 99999999px;
+  margin: 5px 0px;
+}
+
+.friend:hover{
+  background-color: rgb(20, 20, 20);
+  transition: all 0.2s ease-in;
 }
 
 .profileimg{
   font-family: "Fira Code";
-  background-color: #0f0f0f;
+  background: linear-gradient(-315deg, #34073d, #974939);
   width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: 1px solid rgb(54, 54, 54);
+  color: whitesmoke;
 }
 
 .username {

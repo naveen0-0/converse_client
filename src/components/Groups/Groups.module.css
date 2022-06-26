@@ -5,19 +5,19 @@
 
 .listOfFriends{
   width: 300px;
-  border-right: 1px solid rgb(49, 49, 49);
   height: 100vh;
   overflow-y: auto;
   min-height: 200px;
   width: 300px;
+  background-color: rgb(14, 14, 14);
 }
 
 .listOfFriendsActive{
   width: 300px;
-  border-right: 1px solid rgb(49, 49, 49);
   height: 100vh;
   overflow-y: auto;
   min-height: 200px;
+  background-color: rgb(14, 14, 14);
 }
 
 .friendChat{
@@ -39,12 +39,11 @@
     position: absolute;
     transform: translateX(-100%);
     z-index: 1;
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(14, 14, 14);
     transition: transform 0.5s ease-out;
     height: 100vh;
     overflow-y: auto;
     min-height: 200px;
-    border-right: 1px solid rgb(49, 49, 49);
     width: 80%;
   }
   
@@ -53,9 +52,8 @@
     position: absolute;
     transform: translateX(0%);
     z-index: 1;
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(14, 14, 14);
     transition: transform 0.5s ease-out;
-    border-right: 1px solid rgb(49, 49, 49);
     height: 100vh;
     overflow-y: auto;
     min-height: 200px;

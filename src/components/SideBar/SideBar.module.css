@@ -1,5 +1,5 @@
 .sidebar{
-  background-color: #1C1E1F;
+  background-color: rgb(20, 20, 20);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -48,7 +48,7 @@
 }
 
 .logout:hover{
-  background-color: crimson;
+  background: linear-gradient(-315deg, #34073d, #974939);
   border-radius: 50%;
   transition: background-color 0.3s ease-in-out;
 }

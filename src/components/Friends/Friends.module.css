@@ -5,15 +5,15 @@
 
 .listOfFriends{
   width: 300px;
-  border-right: 1px solid rgb(49, 49, 49);
   height: 100vh;
   overflow-y: auto;
   min-height: 200px;
+  background-color: rgb(14, 14, 14);
 }
 
 .listOfFriendsActive{
+  background-color: rgb(14, 14, 14);
   width: 300px;
-  border-right: 1px solid rgb(49, 49, 49);
   height: 100vh;
   overflow-y: auto;
   min-height: 200px;
@@ -35,23 +35,21 @@
     position: absolute;
     transform: translateX(-100%);
     z-index: 1;
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(14, 14, 14);
     transition: transform 0.5s ease-out;
     width: 80%;
     height: 100vh;
     overflow-y: auto;
     min-height: 200px;
-    border-right: 1px solid rgb(49, 49, 49);
   }
   
   .listOfFriendsActive{
     position: absolute;
     transform: translateX(0%);
     z-index: 1;
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(14, 14, 14);
     transition: transform 0.5s ease-out;
     width: 80%;
-    border-right: 1px solid rgb(49, 49, 49);
     height: 100vh;
     overflow-y: auto;
     min-height: 200px;

@@ -4,16 +4,15 @@
   flex-direction: column;
   font-family: "Fira Code";
   min-height: 200px;
-  /* width: 100%; */
-  position: relative
+  position: relative;
+  background-color: rgb(20, 20, 20);
 }
 
 .banner{
   display: flex;
   align-items: center;
-  background-color: rgb(22, 22, 22);
+  background:linear-gradient(-315deg, #34073d,#531b0f);
   padding: 14px;
-  border-bottom: 1px solid rgb(54, 54, 54);
 }
 
 .profileimg{
@@ -25,7 +24,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  border: 1px solid rgb(54, 54, 54);
+  color: rgb(182, 173, 173);
 }
 
 .username {
@@ -39,6 +38,7 @@
   overflow-x: hidden;
   flex: 1;
   color: rgb(126, 126, 126);
+  padding: 0px 8px;
 }
 
 
@@ -51,12 +51,12 @@
 .input{
   width: 100%;
   outline: none;
-  border: 1px solid#6d6f70;
   border-radius: 9999999px;
   padding: 14px;
   font-family: "Fira Code Medium";
-  background-color: #141414;
+  background-color: rgb(12, 12, 12);
   color: rgb(182, 182, 182);
+  border: none;
 }
 
 .search{
