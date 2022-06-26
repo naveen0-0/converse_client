@@ -8,11 +8,26 @@
   background-color: rgb(20, 20, 20);
 }
 
+.mainbanner{
+  background:linear-gradient(-315deg, #34073d,#531b0f);
+  padding: 14px;
+  display: flex;
+  display: flex;
+  align-items: center;
+}
+
 .banner{
   display: flex;
   align-items: center;
-  background:linear-gradient(-315deg, #34073d,#531b0f);
-  padding: 14px;
+}
+
+.back{
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.backpng{
+  width: 25px;
 }
 
 .profileimg{

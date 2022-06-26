@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Hero from '../Hero/Hero'
 import sendimg from '../../images/send.png'
 import Messages from '../Messages/Messages'
-
+import backpng from '../../images/back.png'
 
 export default function FriendChat({ socket }) {
   const dispatch = useDispatch()
@@ -28,14 +28,21 @@ export default function FriendChat({ socket }) {
     }
   }
 
+  const RemoveFriend = () => {
+    dispatch({ type:"REMOVE_FRIEND"})
+  }
+
   return (
     <div>
       {!selectedFriends._id ?  <Hero/> : (
         <div className={styles.chat}>
 
-          <div className={styles.banner}>
-            <div className={styles.profileimg}>{selectedFriends.friend1 === username?selectedFriends.friend2[0].toUpperCase() : selectedFriends.friend1[0].toUpperCase()}</div>
-            <div className={styles.username}>{selectedFriends.friend1 === username?selectedFriends.friend2 : selectedFriends.friend1}</div>
+          <div className={styles.mainbanner}>
+            <div className={styles.back} onClick={RemoveFriend}><img src={backpng} alt="Back Png" className={styles.backpng}/></div>
+            <div className={styles.banner}>
+              <div className={styles.profileimg}>{selectedFriends.friend1 === username?selectedFriends.friend2[0].toUpperCase() : selectedFriends.friend1[0].toUpperCase()}</div>
+              <div className={styles.username}>{selectedFriends.friend1 === username?selectedFriends.friend2 : selectedFriends.friend1}</div>
+            </div>
           </div>
 
           <div className={styles.messages}>

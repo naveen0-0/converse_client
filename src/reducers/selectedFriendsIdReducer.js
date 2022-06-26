@@ -13,6 +13,9 @@ export const selectedFriendsReducer = (state = initialState,action) => {
           } 
         }
 
+      case "REMOVE_FRIEND":
+        return {}
+
       default:
         return state;
   }

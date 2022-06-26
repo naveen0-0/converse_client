@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
 .auth{
   background-color: rgb(26, 26, 27);
   color: whitesmoke;
@@ -9,6 +11,12 @@
   font-size: 40px;
   padding: 20px 0px;
   font-family: cursive;
+  background: linear-gradient(15deg, purple, salmon);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Allura', cursive;
+  font-weight: bold;
 }
 
 .tabs{
@@ -35,5 +43,5 @@
   cursor: pointer;
   color: rgb(235, 235, 235);
   border-radius: 9999999px;
-  background: rgb(100, 132, 237)
+  background: linear-gradient(315deg, purple, rgb(138, 69, 62));
 }

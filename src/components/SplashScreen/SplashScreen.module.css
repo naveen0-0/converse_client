@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&display=swap');
+
+.container{
+  background-color:rgb(20, 20, 20);
+  min-height: 100vh;
+  width: 100%;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainText{
+  font-size: 3rem;
+  background:linear-gradient(315deg, purple,salmon);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Allura', cursive;
+  font-weight: bold;
+}
+
+.mainloadsvg{
+  width: 100px;
+  display: block;
+  margin: auto;
+}

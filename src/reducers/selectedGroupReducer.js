@@ -27,6 +27,9 @@ export const selectedGroupReducer = (state = initialState,action) => {
           } 
         }
 
+      case "REMOVE_GROUP":
+        return {}
+
       default:
         return state;
   }

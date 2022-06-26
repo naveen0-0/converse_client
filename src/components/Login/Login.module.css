@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 .login {
   display: flex;
   margin-top: 50px;
@@ -44,13 +46,14 @@
 
 .submit{
   width: max-content;
-  padding: 8px 14px;
-  outline: none;
-  border: none;
-  border-radius: 9999999px;
-  font-family: "Fira Code";
-  background: linear-gradient(to right, salmon, cornflowerblue);
-  cursor: pointer;
+    padding: 8px 14px;
+    outline: none;
+    border: none;
+    border-radius: 9999999px;
+    font-family: "Fira Code";
+    background: linear-gradient(315deg, purple, rgb(138, 69, 62));
+    cursor: pointer;
+    color: rgb(175, 177, 179);
 }
 
 .feedback{

@@ -6,8 +6,10 @@ import Hero from '../Hero/Hero'
 import GroupMessages from '../GroupMessages/GroupMessages'
 import adduserimg from '../../images/adduser.png'
 import axios from 'axios'
+import backpng from '../../images/back.png'
 
 export default function GroupChat({ socket, btnText, setBtnText }) {
+  const dispatch = useDispatch()
   const [ message, setMessage ] = useState("")
   const [ modalActive, setModalActive ] = useState(false)
   const [ friendName, setFriendName ] = useState("")
@@ -45,6 +47,11 @@ export default function GroupChat({ socket, btnText, setBtnText }) {
     socket.emit('add_user_to_the_group',{ chatId : user.chatId, username : user.username, groupId : group.groupId })
   }
 
+  const RemoveFriend = () => {
+    dispatch({ type: "REMOVE_GROUP" })
+  }
+
+
   return (
 
     <div>
@@ -53,7 +60,8 @@ export default function GroupChat({ socket, btnText, setBtnText }) {
 
           <div className={styles.banner}>
             <div className={styles.groupbanner}>
-              <div className={styles.profileimg}>{group.groupName[0]}</div>
+              <div className={styles.back} onClick={RemoveFriend}><img src={backpng} alt="Back Png" className={styles.backpng}/></div>
+              <div className={styles.profileimg}>{group.groupName[0].toUpperCase()}</div>
               <div className={styles.username}>{group.groupName}</div>
             </div>
 
@@ -79,7 +87,6 @@ export default function GroupChat({ socket, btnText, setBtnText }) {
                 )}
               </div>
             </div>
-
           </div>
 
 

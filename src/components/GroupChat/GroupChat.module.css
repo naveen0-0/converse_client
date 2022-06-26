@@ -8,6 +8,15 @@
   background-color: rgb(20, 20, 20);
 }
 
+.back{
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.backpng{
+  width: 25px;
+}
+
 .banner{
   display: flex;
   align-items: center;

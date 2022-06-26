@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
 .signup{
   display: flex;
   margin-top: 50px;
@@ -50,8 +52,9 @@
   border: none;
   border-radius: 9999999px;
   font-family: "Fira Code";
-  background: linear-gradient(to right, salmon, cornflowerblue);
+  background: linear-gradient(315deg, purple, rgb(138, 69, 62));
   cursor: pointer;
+  color: rgb(175, 177, 179);
 }
 
 .feedback{
