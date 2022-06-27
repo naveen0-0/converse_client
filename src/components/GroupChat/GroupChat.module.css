@@ -14,7 +14,9 @@
 }
 
 .backpng{
-  width: 25px;
+  width: 30px;
+  display: block;
+  margin: auto;
 }
 
 .banner{

@@ -12,7 +12,6 @@
   background:linear-gradient(-315deg, #34073d,#531b0f);
   padding: 14px;
   display: flex;
-  display: flex;
   align-items: center;
 }
 
@@ -27,7 +26,9 @@
 }
 
 .backpng{
-  width: 25px;
+  width: 30px;
+  display: block;
+  margin: auto;
 }
 
 .profileimg{
