@@ -20,7 +20,7 @@
   width: max-content;
   font-size: 14px;
   padding: 5px 10px;
-
-    background-color: rgb(27, 27, 27);
-    border-radius: 5px;
+  direction: ltr;
+  background-color: rgb(27, 27, 27);
+  border-radius: 5px;
 }
