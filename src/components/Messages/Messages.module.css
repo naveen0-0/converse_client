@@ -15,7 +15,6 @@
 
 .user,.friend{
   font-weight: 500;
-  word-break: break-all;
   color: rgb(158, 158, 158);
   max-width: 70%;
   width: max-content;
