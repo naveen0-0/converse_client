@@ -72,7 +72,7 @@
 }
 .profileimg{
   background: linear-gradient(-315deg, #34073d, #974939);
-    color: whitesmoke;
+  color: whitesmoke;
   font-family: "Fira Code";
   font-weight: 400;
   border-radius: 50%;
@@ -82,12 +82,27 @@
   place-items: center;
 }
 
+.groupnamecontainer{
+  font-family: "Fira Code";
+  color: rgb(182, 182, 182);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 10px;
+}
+
 .groupname{
   font-family: "Fira Code";
   color: rgb(182, 182, 182);
-  padding-left: 10px;
 
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.lastMsg {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
 }

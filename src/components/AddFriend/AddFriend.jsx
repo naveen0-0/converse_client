@@ -49,8 +49,9 @@ export default function AddFriend({ socket, text, setText, user, setUser, feedba
           onChange={e => setText(e.target.value)}
           onKeyPress={SearchForAFriend}
         />
-        <img src={searchpng} alt="Search" className={styles.search}/>
       </div>
+      
+      <div className={styles.friend_requests}>Friend Requests</div>
 
       {user && (
         <div className={styles.friendrequest}>
@@ -64,7 +65,6 @@ export default function AddFriend({ socket, text, setText, user, setUser, feedba
         </div>
       )}
 
-      <div className={styles.friend_requests}>Friend Requests</div>
 
       <div className={styles.friends}>
         {friends.map((friend, index) => 

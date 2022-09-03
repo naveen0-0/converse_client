@@ -60,7 +60,6 @@ export default function FriendChat({ socket }) {
                 autoFocus={true}
                 onKeyPress={sendMessage}
               />
-              <img src={sendimg} alt="Search" className={styles.search}/>
             </div>
         </div>
       )}

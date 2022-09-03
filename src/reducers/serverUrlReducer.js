@@ -1,5 +1,5 @@
-const serverUrl = "https://converse-1910.herokuapp.com"
-const serverUrlDev = "https://localhost:5000"
+// const serverUrl = "https://converse-1910.herokuapp.com"
+const serverUrl = "http://localhost:5000"
 
 const initialState = {
   serverUrl: serverUrl,

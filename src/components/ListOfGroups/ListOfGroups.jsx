@@ -1,8 +1,6 @@
 import React,{ useState } from 'react'
 import styles from './ListOfGroups.module.css'
 import { useSelector, useDispatch } from 'react-redux'
-import searchpng from '../../images/search.png'
-import closepng from '../../images/close.png'
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid';
 
@@ -54,7 +52,10 @@ export default function ListOfGroups({ setSidebarActive, sidebarActive, socket }
         {groups.map((group, index) => 
           <div title={group.groupName} key={index} className={styles.group} onClick={() => { dispatch({ type:"UPDATE_GROUP", payload: group });setSidebarActive(!sidebarActive) }}>
             <div className={styles.profileimg}>{group.groupName[0]}</div>
-            <div className={styles.groupname}>{group.groupName}</div>
+            <div className={styles.groupnamecontainer}>
+              <div className={styles.groupname}>{group.groupName}</div>
+              <div className={styles.lastMsg}>{group.messages[group.messages.length-1].message}</div>
+            </div>
           </div>
         )}
       </div>

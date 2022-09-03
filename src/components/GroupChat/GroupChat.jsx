@@ -65,11 +65,13 @@ export default function GroupChat({ socket, btnText, setBtnText }) {
               <div className={styles.username}>{group.groupName}</div>
             </div>
 
-            <div className={styles.actions}>
-              <div className={styles.adduser} onClick={() => setModalActive(!modalActive)} title='Add someone to the group'>
-                <img src={adduserimg} alt="Add User" className={styles.adduserimg} />
+            {group.admin === username &&
+              <div className={styles.actions}>
+                <div className={styles.adduser} onClick={() => setModalActive(!modalActive)} title='Add someone to the group'>
+                  <img src={adduserimg} alt="Add User" className={styles.adduserimg} />
+                </div>
               </div>
-            </div>
+            }
 
 
             <div className={modalActive? styles.modalactive :  styles.modal}>
@@ -105,7 +107,6 @@ export default function GroupChat({ socket, btnText, setBtnText }) {
               autoFocus={true}
               onKeyPress={sendMessage}
             />
-            <img src={sendimg} alt="Search" className={styles.search}/>
           </div>
         </div>
       )}

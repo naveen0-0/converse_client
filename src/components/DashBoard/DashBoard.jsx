@@ -7,11 +7,13 @@ import Friends from '../Friends/Friends'
 import Groups from '../Groups/Groups'
 import AddFriend from '../AddFriend/AddFriend'
 import axios from 'axios'
+import useSound from 'use-sound'
+import Notification from '../Notification/Notification'
+
 
 let newSocket;
 export default function DashBoard() {
   const dispatch = useDispatch();
-  const selectedFriends = useSelector(state => state.selectedFriends)
   const [ GroupSidebarActive, setGroupSidebarActive ] = useState(false)
   const [ FriendsSidebarActive, setFriendsSidebarActive ] = useState(false)
 
@@ -154,6 +156,8 @@ export default function DashBoard() {
       <div className={styles.component}>
         {components[tabIndex]}
       </div>
+
+      {/* <Notification content="Notifications"/> */}
     </div>
   )
 }

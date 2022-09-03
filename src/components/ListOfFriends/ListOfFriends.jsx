@@ -2,7 +2,6 @@ import React,{ useState } from 'react'
 import styles from './ListOfFriends.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import searchpng from '../../images/search.png'
-import closepng from '../../images/close.png'
 
 export default function ListOfFriends({ setSidebarActive, sidebarActive }) {
   const dispatch = useDispatch()
@@ -21,7 +20,6 @@ export default function ListOfFriends({ setSidebarActive, sidebarActive }) {
           onChange={e => setSearchText(e.target.value)}
           className={styles.input}
         />
-        <img src={searchpng} alt="Search" className={styles.search}/>
       </div>
 
       <div className={styles.friends}>
@@ -32,17 +30,18 @@ export default function ListOfFriends({ setSidebarActive, sidebarActive }) {
               <div className={styles.profileimg}>
                 {friend.friend1 === username ? friend.friend2[0].toUpperCase() : friend.friend1[0].toUpperCase()}
               </div>
-              <div className={styles.username}>
-                {friend.friend1 === username ? friend.friend2 : friend.friend1}
+              <div className={styles.usernameContainer}>
+                <div className={styles.username}>{friend.friend1 === username ? friend.friend2 : friend.friend1}</div>
+                <div className={styles.lastMsg}>{friend.messages[friend.messages.length-1].message}</div>
               </div>
             </div>
           )}
         })}
       </div>
 
-      <div className={styles.closeContainer} onClick={() => setSidebarActive(!sidebarActive)}>
+      {/* <div className={styles.closeContainer} onClick={() => setSidebarActive(!sidebarActive)}>
         <img src={closepng} alt="Close" className={styles.closeimg}/>
-      </div>
+      </div> */}
 
     </div>
   )
