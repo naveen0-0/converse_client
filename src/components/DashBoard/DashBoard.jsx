@@ -33,7 +33,7 @@ export default function DashBoard() {
     <Profile/>,
   ]
 
-  const [ tabIndex, setTabIndex ] = useState(1)
+  const [ tabIndex, setTabIndex ] = useState(0)
   const { chatId, username } = useSelector(state => state.user)
   const { serverUrl } = useSelector(state => state.serverUrl)
 

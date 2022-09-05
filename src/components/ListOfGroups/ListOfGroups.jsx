@@ -54,7 +54,10 @@ export default function ListOfGroups({ setSidebarActive, sidebarActive, socket }
             <div className={styles.profileimg}>{group.groupName[0]}</div>
             <div className={styles.groupnamecontainer}>
               <div className={styles.groupname}>{group.groupName}</div>
-              <div className={styles.lastMsg}>{group.messages[group.messages.length-1].message}</div>
+              {group.messages.length === 0?
+                <div className={styles.lastMsg}>{group.groupName} group has been created</div> : 
+                <div className={styles.lastMsg}>{group.messages[group.messages.length-1].message}</div>
+              }
             </div>
           </div>
         )}

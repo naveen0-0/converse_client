@@ -32,7 +32,10 @@ export default function ListOfFriends({ setSidebarActive, sidebarActive }) {
               </div>
               <div className={styles.usernameContainer}>
                 <div className={styles.username}>{friend.friend1 === username ? friend.friend2 : friend.friend1}</div>
-                <div className={styles.lastMsg}>{friend.messages[friend.messages.length-1].message}</div>
+                {friend.messages.length === 0?
+                  <div className={styles.lastMsg}>Be the first one to say HELLO</div> : 
+                  <div className={styles.lastMsg}>{friend.messages[friend.messages.length-1].message}</div>
+                }
               </div>
             </div>
           )}
