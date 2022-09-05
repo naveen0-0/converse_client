@@ -10,16 +10,16 @@
   width: 95%;
   margin: 5px auto;
   outline: none;
-  border: 1px solid#1C1E1F;
-  border-radius: 99999999px;
+  border: 1px solid#3d3d3d;
+  border-radius: 5px;
   padding: 14px;
   font-family: "Fira Code";
   background-color: #0f0f0f;
   color: rgb(182, 182, 182);
 }
 
-.input:focus{
-  border: 1px solid #34073d;
+.input:focus {
+  border: 1px solid rgb(66, 98, 158);
 }
 
 .create_group{
@@ -28,7 +28,7 @@
   border: none;
   color: whitesmoke;
   background: linear-gradient(-315deg, #34073d, #974939);
-  border-radius: 9999999px;
+  border-radius: 5px;
   padding: 10px 0px;
   font-family: "Fira Code";
   width: 95%;

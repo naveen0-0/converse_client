@@ -10,7 +10,8 @@ import adduserimg from '../../images/adduser.png'
 import bluemessagimg from '../../images/bluemessenger.png'
 import bluegroupimg from '../../images/bluegroup.png'
 import blueadduserimg from '../../images/blueadduser.png'
-
+import userimg from '../../images/user.png'
+import usernameimg from '../../images/username.png'
 
 export default function SideBar({ setTabIndex, index, gsidebarActive, gsetSidebarActive, fsidebarActive, fsetSidebarActive }) {
   const dispatch = useDispatch()
@@ -45,7 +46,7 @@ export default function SideBar({ setTabIndex, index, gsidebarActive, gsetSideba
 
         <div className={index === 2 ? styles.activecategory : styles.category3}>
           <img 
-            src={index === 2? blueadduserimg : adduserimg} 
+            src={index === 2 ? blueadduserimg : adduserimg} 
             alt="Add Friend"  
             className={styles.category3img}
             title='Add Friend'
@@ -54,14 +55,27 @@ export default function SideBar({ setTabIndex, index, gsidebarActive, gsetSideba
         </div>
       </div>
 
-      <div className={styles.logout} onClick={Logout}>
-        <img 
-          src={logoutimg} 
-          alt="Logout" 
-          className={styles.logoutimg}
-          title='Logout'
-        />
+      <div>
+        <div className={ index === 3 ? styles.activecategory : styles.category1 }>
+            <img 
+              src={index === 3 ? userimg : usernameimg} 
+              alt="Profile" 
+              className={styles.category1img}
+              title='Profile'
+              onClick={() => { setTabIndex(3); fsetSidebarActive(!fsidebarActive) }}
+            />
+        </div>
+
+        <div className={styles.logout} onClick={Logout}>
+          <img 
+            src={logoutimg} 
+            alt="Logout" 
+            className={styles.logoutimg}
+            title='Logout'
+          />
+        </div>
       </div>
+
 
     </div>
   )

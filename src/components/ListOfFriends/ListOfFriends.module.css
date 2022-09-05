@@ -10,18 +10,18 @@
 }
 
 .input{
-  border-radius: 99999999px;
+  border-radius: 5px;
   width: 100%;
   outline: none;
-  border: 1px solid#1C1E1F;
+  border: 1px solid#3d3d3d;
   padding: 14px;
   font-family: "Fira Code";
   background-color: #0f0f0f;
   color: rgb(182, 182, 182);
 }
 
-.input:focus{
-  border: 1px solid #34073d;
+.input:focus {
+  border: 1px solid rgb(66, 98, 158);
 }
 
 .friends{

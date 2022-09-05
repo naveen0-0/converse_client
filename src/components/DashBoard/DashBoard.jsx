@@ -6,6 +6,7 @@ import SideBar from '../SideBar/SideBar'
 import Friends from '../Friends/Friends'
 import Groups from '../Groups/Groups'
 import AddFriend from '../AddFriend/AddFriend'
+import Profile from '../Profile/Profile'
 import axios from 'axios'
 import useSound from 'use-sound'
 import Notification from '../Notification/Notification'
@@ -26,11 +27,13 @@ export default function DashBoard() {
 
   const [ socket, setSocket ] = useState(null);
   const components = [ 
-                      <Friends socket={socket} sidebarActive={FriendsSidebarActive} setSidebarActive={setFriendsSidebarActive}/>, 
-                      <Groups socket={socket} sidebarActive={GroupSidebarActive} setSidebarActive={setGroupSidebarActive} btnText={btnText} setBtnText={setBtnText}/>, 
-                      <AddFriend socket={socket} text={text} setText={setText} user={user} setUser={setUser} feedback={feedback} setFeedback={setFeedback} statusNum={statusNum} setStatusNum={setStatusNum}/> 
-                    ]
-  const [ tabIndex, setTabIndex ] = useState(0)
+    <Friends socket={socket} sidebarActive={FriendsSidebarActive} setSidebarActive={setFriendsSidebarActive}/>, 
+    <Groups socket={socket} sidebarActive={GroupSidebarActive} setSidebarActive={setGroupSidebarActive} btnText={btnText} setBtnText={setBtnText}/>, 
+    <AddFriend socket={socket} text={text} setText={setText} user={user} setUser={setUser} feedback={feedback} setFeedback={setFeedback} statusNum={statusNum} setStatusNum={setStatusNum}/>,
+    <Profile/>,
+  ]
+
+  const [ tabIndex, setTabIndex ] = useState(1)
   const { chatId, username } = useSelector(state => state.user)
   const { serverUrl } = useSelector(state => state.serverUrl)
 
