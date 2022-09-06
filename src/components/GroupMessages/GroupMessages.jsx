@@ -12,12 +12,11 @@ export default function GroupMessages() {
   }
 
   useEffect(() => {
-    console.log(messages);
     scrollToBottom()
   }, [messages]);
 
   return (
-    <div className={styles.msgcontainer}>
+    <>
       {messages.map((message, index) => 
         <div key={index} className={styles.user}>
 
@@ -29,18 +28,16 @@ export default function GroupMessages() {
           <div className={styles.second}>
 
             <div className={styles.head}>
-              {message.sender === username? <div className={styles.usersender}>{username}</div> : <div className={styles.sender}>{message.sender}</div>}
+              {message.sender === username? <div className={styles.usersender}>You</div> : <div className={styles.sender}>{message.sender}</div>}
               <div className={styles.time}>{`${new Date(message.time).toLocaleDateString()} ${new Date(message.time).toLocaleTimeString()}`}</div>
             </div>
 
-            <div>
-              <div className={styles.msg}>{message.message}</div>
-            </div>
+            <div className={styles.msg}>{message.message}</div>
           </div>
 
         </div>
       )}
       <div ref={messagesEndRef} />
-    </div>
+    </>
   )
 }

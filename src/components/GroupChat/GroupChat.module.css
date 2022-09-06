@@ -123,14 +123,14 @@
 
 .profileimg{
   font-family: "Fira Code";
-    background-color: #0f0f0f;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    color: rgb(182, 173, 173);
+  background-color: #0f0f0f;
+  min-width: 30px;
+  min-height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: whitesmoke;
 }
 
 .username {
