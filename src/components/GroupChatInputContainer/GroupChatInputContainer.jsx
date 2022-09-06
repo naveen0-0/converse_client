@@ -19,7 +19,7 @@ export default function GroupChatInputContainer({ socket }) {
     <div className={styles.inputcontainer}>
       <input 
         type="text"
-        placeholder="Enter Message...."
+        placeholder="Send a message . . . ."
         value={message}
         onChange={e => setMessage(e.target.value)}
         className={styles.input}
