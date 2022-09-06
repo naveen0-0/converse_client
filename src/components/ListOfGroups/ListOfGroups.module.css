@@ -63,7 +63,7 @@
   cursor: pointer;
   padding: 10px;
   margin: 5px 0px;
-  border-radius: 99999999px;
+  border-radius: 5px;
 }
 
 .group:hover {
