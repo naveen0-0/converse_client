@@ -1,8 +1,8 @@
 import React from 'react'
 import styles from './Notification.module.css'
 
-export default function Notification({ content }) {
+export default function Notification({ children }) {
   return (
-    <div className={styles.notifications}>{content}</div>
+    <div className={styles.notifications}>{children}</div>
   )
 }

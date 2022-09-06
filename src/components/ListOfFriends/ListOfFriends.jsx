@@ -1,7 +1,6 @@
 import React,{ useState } from 'react'
 import styles from './ListOfFriends.module.css'
 import { useSelector, useDispatch } from 'react-redux'
-import searchpng from '../../images/search.png'
 
 export default function ListOfFriends({ setSidebarActive, sidebarActive }) {
   const dispatch = useDispatch()

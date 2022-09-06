@@ -1,26 +1,43 @@
-.msgcontainer{
-  padding:0px 10px;
-}
-
 .user{
-  margin: 10px 0px 10px auto;
-  text-align: right;
+  /* background-color: rgb(15, 15, 15); */
+  margin-top: 5px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
-
-.friend{
-  margin: 10px auto 10px 0px;
-  text-align: left;
+.profile{
+  margin-right: 5px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 99999999px;
+  background: linear-gradient(-315deg, #34073d, #974939);
 }
 
-.user,.friend{
-  font-weight: 500;
-  color: rgb(158, 158, 158);
-  max-width: 70%;
-  width: max-content;
-  font-size: 14px;
-  padding: 5px 10px;
-  direction: ltr;
-  background-color: rgb(27, 27, 27);
-  border-radius: 5px;
+.head{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
+
+.sender{
+  color:gold;
+}
+
+.usersender{
+  color: cornflowerblue;
+}
+
+.time{
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+.msg{
+  margin-left: 10px;
+  color: #adadad;
+}
+

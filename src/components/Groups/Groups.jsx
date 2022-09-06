@@ -2,7 +2,6 @@ import React,{ useState } from 'react'
 import styles from './Groups.module.css'
 import ListOfGroups from '../ListOfGroups/ListOfGroups'
 import GroupChat from '../GroupChat/GroupChat'
-import personimg from '../../images/man.png'
 
 export default function Groups({ socket,sidebarActive, setSidebarActive, btnText, setBtnText }) {
 

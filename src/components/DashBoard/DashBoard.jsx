@@ -160,7 +160,6 @@ export default function DashBoard() {
         {components[tabIndex]}
       </div>
 
-      {/* <Notification content="Notifications"/> */}
     </div>
   )
 }

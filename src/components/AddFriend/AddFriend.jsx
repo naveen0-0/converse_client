@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './AddFriend.module.css'
-import searchpng from '../../images/search.png'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 

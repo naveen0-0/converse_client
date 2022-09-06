@@ -1,16 +1,16 @@
 import React,{ useState } from 'react'
 import styles from './GroupChat.module.css'
 import { useSelector, useDispatch } from 'react-redux'
-import sendimg from '../../images/send.png'
 import Hero from '../Hero/Hero'
 import GroupMessages from '../GroupMessages/GroupMessages'
 import adduserimg from '../../images/adduser.png'
 import axios from 'axios'
 import backpng from '../../images/back.png'
+import GroupChatInputContainer from '../GroupChatInputContainer/GroupChatInputContainer'
 
 export default function GroupChat({ socket, btnText, setBtnText }) {
   const dispatch = useDispatch()
-  const [ message, setMessage ] = useState("")
+
   const [ modalActive, setModalActive ] = useState(false)
   const [ friendName, setFriendName ] = useState("")
   const [ user, setUser ] = useState({});
@@ -22,12 +22,6 @@ export default function GroupChat({ socket, btnText, setBtnText }) {
   const { username } = useSelector(state => state.user)
   const { serverUrl } = useSelector(state => state.serverUrl)
 
-  const sendMessage = (e) => {
-    if(e.key === 'Enter' && message.trim()){
-      socket.emit("group_send_msg",{ groupId : group.groupId, sender : username, message, time: new Date() })
-      setMessage("")
-    }
-  }
 
   const fetchUserToAddToTheGroup = async e => {
     if(e.key === 'Enter' && friendName.trim()){
@@ -72,8 +66,6 @@ export default function GroupChat({ socket, btnText, setBtnText }) {
                 </div>
               </div>
             }
-
-
             <div className={modalActive? styles.modalactive :  styles.modal}>
               <div className={styles.modaltitle}>Add Friend</div>
               <input type="text" value={friendName} onChange={e => setFriendName(e.target.value)} className={styles.addfriend} placeholder="Enter a friend name" onKeyPress={fetchUserToAddToTheGroup}/>
@@ -96,18 +88,7 @@ export default function GroupChat({ socket, btnText, setBtnText }) {
             <GroupMessages/>
           </div>
 
-          
-          <div className={styles.inputcontainer}>
-            <input 
-              type="text"
-              placeholder="Enter Message...."
-              value={message}
-              onChange={e => setMessage(e.target.value)}
-              className={styles.input}
-              autoFocus={true}
-              onKeyPress={sendMessage}
-            />
-          </div>
+          <GroupChatInputContainer socket={socket}/>
         </div>
       )}
     </div>

@@ -2,13 +2,14 @@
 
 .notifications{
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   right: 10px;
   font-family: "Fira Code";
 
-  background-color: rgb(48, 48, 48);
-  color: whitesmoke;
+  background-color: rgb(24, 24, 24);
+  color: rgb(136, 135, 135);
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 3px 3px 3px rgb(44, 44, 44);
+  box-shadow: 0px 0px 0px 2px crimson;
+  
 }
