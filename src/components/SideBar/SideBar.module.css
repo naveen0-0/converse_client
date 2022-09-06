@@ -14,6 +14,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 5px;
 }
 
 .activecategory{
@@ -21,6 +22,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(-315deg, #34073d, #974939);
+  padding: 5px;
+  border-radius: 50%;
 }
 
 .category1img,.logoutimg{
@@ -51,4 +55,28 @@
   background: linear-gradient(-315deg, #34073d, #974939);
   border-radius: 50%;
   transition: background-color 0.3s ease-in-out;
+}
+
+.activeprofile{
+  background: linear-gradient(-315deg, #34073d, #974939);
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile{
+  margin-bottom: 20px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.profileimg{
+  width: 20px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
 }

@@ -6,12 +6,12 @@ import messagesimg from '../../images/messenger.png'
 import groupimg from '../../images/group.png'
 import logoutimg from '../../images/logout.png'
 import adduserimg from '../../images/adduser.png'
+import usernameimg from '../../images/username.png'
 
 import bluemessagimg from '../../images/bluemessenger.png'
 import bluegroupimg from '../../images/bluegroup.png'
 import blueadduserimg from '../../images/blueadduser.png'
 import userimg from '../../images/user.png'
-import usernameimg from '../../images/username.png'
 
 export default function SideBar({ setTabIndex, index, gsidebarActive, gsetSidebarActive, fsidebarActive, fsetSidebarActive }) {
   const dispatch = useDispatch()
@@ -27,7 +27,7 @@ export default function SideBar({ setTabIndex, index, gsidebarActive, gsetSideba
       <div className={styles.categories}>
         <div className={ index === 0 ? styles.activecategory : styles.category1 }>
           <img 
-            src={index === 0 ? bluemessagimg : messagesimg} 
+            src={messagesimg}
             alt="Messages" 
             className={styles.category1img}
             title='Messages'
@@ -36,17 +36,16 @@ export default function SideBar({ setTabIndex, index, gsidebarActive, gsetSideba
         </div>
         <div className={index === 1 ? styles.activecategory : styles.category2}>
           <img 
-            src={ index === 1 ? bluegroupimg :groupimg } 
+            src={groupimg} 
             alt="Group"  
             className={styles.category2img}
             title='Groups'
             onClick={() => {setTabIndex(1); gsetSidebarActive(!gsidebarActive)}}
           />
         </div>
-
         <div className={index === 2 ? styles.activecategory : styles.category3}>
           <img 
-            src={index === 2 ? blueadduserimg : adduserimg} 
+            src={adduserimg} 
             alt="Add Friend"  
             className={styles.category3img}
             title='Add Friend'
@@ -55,15 +54,15 @@ export default function SideBar({ setTabIndex, index, gsidebarActive, gsetSideba
         </div>
       </div>
 
-      <div>
-        <div className={ index === 3 ? styles.activecategory : styles.category1 }>
-            <img 
-              src={index === 3 ? userimg : usernameimg} 
-              alt="Profile" 
-              className={styles.category1img}
-              title='Profile'
-              onClick={() => { setTabIndex(3); fsetSidebarActive(!fsidebarActive) }}
-            />
+      <div className={styles.actions}>
+        <div className={index === 3 ? styles.activeprofile : styles.profile }>
+          <img 
+            src={usernameimg}
+            alt="Profile" 
+            className={styles.profileimg}
+            title='Profile'
+            onClick={() => { setTabIndex(3); fsetSidebarActive(!fsidebarActive) }}
+          />
         </div>
 
         <div className={styles.logout} onClick={Logout}>
