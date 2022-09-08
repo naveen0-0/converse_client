@@ -1,15 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
-.notifications{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-family: "Fira Code";
-
-  background-color: rgb(24, 24, 24);
-  color: rgb(136, 135, 135);
+.notification{
+  border: 1px solid #974939;
+  background-color: rgba(151, 73, 57, 0.1);
+  margin: 10px;
   padding: 10px;
   border-radius: 5px;
-  box-shadow: 0px 0px 0px 2px crimson;
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slidein 600ms ease-in-out;
+}
+
+@keyframes slidein{
+  0%{
+    transform: translateX(200%);
+  }
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideout{
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(200%);
+  }
+}
+
+.content{
+  word-break: break-all;
+  color: white;
+  font-family: "Roboto";
+}
+
+.closeimg{
+  margin-left: 5px;
+  width: 12px;
+  cursor: pointer;
 }

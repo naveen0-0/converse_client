@@ -9,7 +9,7 @@ import AddFriend from '../AddFriend/AddFriend'
 import Profile from '../Profile/Profile'
 import axios from 'axios'
 import useSound from 'use-sound'
-import Notification from '../Notification/Notification'
+import Notifications from '../Notifications/Notifications'
 
 
 let newSocket;
@@ -46,7 +46,7 @@ export default function DashBoard() {
       newSocket.off()
     }
   },[])
-
+  
   useEffect(() => {
     newSocket.emit('join_groups',{ username })
   },[])
@@ -145,7 +145,6 @@ export default function DashBoard() {
   }
 
 
-
   return (
     <div className={styles.dashboard}>
       <SideBar 
@@ -156,9 +155,13 @@ export default function DashBoard() {
         fsidebarActive={FriendsSidebarActive} 
         fsetSidebarActive={setFriendsSidebarActive}
       />
+
+
       <div className={styles.component}>
         {components[tabIndex]}
       </div>
+
+      <Notifications/>
 
     </div>
   )

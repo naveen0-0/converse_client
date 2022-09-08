@@ -1,8 +1,30 @@
-import React from 'react'
+import React,{ useEffect, useState } from 'react'
 import styles from './Notification.module.css'
+import { useDispatch } from 'react-redux'
+import closeimg from '../../images/close.png'
 
-export default function Notification({ children }) {
+export default function Notification({ content, id }) {
+  const dispatch = useDispatch();
+
+  const RemoveNotification = (id) => {
+    dispatch({ type : "REMOVE_NOTIFICATION", payload:id})
+  }
+  
+  useEffect(() => {
+    setTimeout(() => RemoveNotification(id),3000)
+  },[])
+
   return (
-    <div className={styles.notifications}>{children}</div>
+    <div className={styles.notification}>
+      <div className={styles.content}>{content}</div>
+      <img 
+        src={closeimg} 
+        alt="Close" 
+        onClick={() => {
+          RemoveNotification(id)
+        }}
+        className={styles.closeimg}
+      />
+    </div>
   )
 }
