@@ -2,7 +2,7 @@
 
 .notification{
   min-height: 50px;
-  background-color: rgb(10, 10, 10);
+  background:linear-gradient(to right, #CB356B,#BD3F32);
   box-shadow: 3px 3px 3px;
   margin: 10px;
   padding: 10px;
@@ -32,8 +32,7 @@
 }
 
 .content{
-  word-break: break-all;
-  color: cornflowerblue;
+  color: black;
   font-family: "Fira Code";
 }
 

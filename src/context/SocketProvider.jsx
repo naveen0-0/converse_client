@@ -17,6 +17,12 @@ export default function SocketProvider({ children }) {
   const [ feedback, setFeedback ] = useState("")
   const [ statusNum, setStatusNum ] = useState(null)
 
+  const [ modalActive, setModalActive ] = useState(false)
+  const [ user, setUser ] = useState({});
+  const [ feedback2, setFeedback2 ] = useState("")
+  const [ operation, setOperation ] = useState(null)
+  const [ addUserToTheGroupActive, setAddUserToTheGroupActive ] = useState(false)
+
   const AddNotification = (type,content) => {
     dispatch({ type : type, payload:{ id: uuidv4(), content : content }})
   }
@@ -106,11 +112,17 @@ export default function SocketProvider({ children }) {
     })
   },[])
 
-  //@ Add the user to the groups in the redux store
+  //! Add the user to the groups in the redux store (Working)
   useEffect(() => {
     newSocket.on('add_user_to_the_group_in_redux', data => {
       dispatch({ type : "ADD_USER_TO_THE_SELECTED_GROUP_IN_REDUX", payload : data})
       dispatch({ type : "ADD_USER_TO_THE_GROUPS_IN_REDUX", payload : data})
+      setAddUserToTheGroupActive(false)
+      setFeedback2("")
+      setOperation(false)
+      setUser({})
+      setModalActive(false)
+      AddNotification("ADD_NOTIFICATION",`${data.username} has been added to the group`)
       setBtnText("User Added")
     })
   },[])
@@ -118,12 +130,30 @@ export default function SocketProvider({ children }) {
   //@ Add the group to the user in the redus store
   useEffect(() => {
     newSocket.on('add_group_to_the_user_in_redux', data => {
+      AddNotification("ADD_NOTIFICATION",`You have been added to ${data.groupName} Group`)
       dispatch({ type:"ADD_GROUP", payload: data })
     })
   },[])
   
   return (
-    <SocketContext.Provider value={{ socket, btnText, feedback, setFeedback, statusNum, setStatusNum }}>
+    <SocketContext.Provider value={{ 
+        socket, 
+        btnText, 
+        feedback, 
+        setFeedback, 
+        statusNum, 
+        setStatusNum,
+        setAddUserToTheGroupActive,
+        addUserToTheGroupActive,
+        setOperation,
+        operation,
+        setFeedback2,
+        feedback2,
+        setUser,
+        user,
+        setModalActive,
+        modalActive
+      }}>
       {children}
     </SocketContext.Provider>
   )
