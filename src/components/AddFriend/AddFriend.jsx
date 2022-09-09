@@ -1,4 +1,4 @@
-import React,{ useContext, useState } from 'react'
+import React,{ useState, useContext } from 'react'
 import { SocketContext } from '../../context/SocketProvider'
 import styles from './AddFriend.module.css'
 import axios from 'axios'

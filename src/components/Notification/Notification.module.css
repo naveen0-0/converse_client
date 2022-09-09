@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 .notification{
-  background:linear-gradient(to right, rgb(22, 33, 53),rgb(46, 21, 18));
-  /* background-color: rgb(10, 10, 10); */
+  min-height: 50px;
+  background-color: rgb(10, 10, 10);
   box-shadow: 3px 3px 3px;
   margin: 10px;
   padding: 10px;
@@ -33,8 +33,8 @@
 
 .content{
   word-break: break-all;
-  color: white;
-  font-family: "Roboto";
+  color: cornflowerblue;
+  font-family: "Fira Code";
 }
 
 .closeimg{

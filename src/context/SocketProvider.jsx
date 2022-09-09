@@ -1,7 +1,7 @@
 import React,{ useEffect, useState, createContext } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { io } from 'socket.io-client'
-
+import { v4 as uuidv4 } from 'uuid';
 
 export const SocketContext = createContext();
 let newSocket;
@@ -16,6 +16,15 @@ export default function SocketProvider({ children }) {
   const [ btnText, setBtnText ] = useState("Add")
   const [ feedback, setFeedback ] = useState("")
   const [ statusNum, setStatusNum ] = useState(null)
+
+  const AddNotification = (type,content) => {
+    dispatch({ type : type, payload:{ id: uuidv4(), content : content }})
+  }
+
+  const RemoveAll = () => {
+    dispatch({ type : "REMOVE_ALL_NOTIFICATION"})
+  }
+
 
   //@ Socket Connection
   useEffect(() => {
@@ -41,9 +50,10 @@ export default function SocketProvider({ children }) {
     })
     newSocket.on('friend_request_receiver', data => {
       dispatch({ type: "ADD_FRIEND", payload: data})
+      AddNotification("ADD_NOTIFICATION",`Friend Request : ${data.friend1}`)
     })
   },[])
-
+  
   //@ Friend Request Accepting Event
   useEffect(() => {
     newSocket.on('friend_request_accepted_sender', data => {
@@ -52,6 +62,7 @@ export default function SocketProvider({ children }) {
     
     newSocket.on('friend_request_accepted_receiver', data => {
       dispatch({ type : 'MAKE_A_FRIEND', payload : data })
+      AddNotification("ADD_NOTIFICATION",`Friend Request Accepted`)
     })
   },[])
 
@@ -63,6 +74,7 @@ export default function SocketProvider({ children }) {
     
     newSocket.on('friend_request_declined_receiver', data => {
       dispatch({ type : 'REMOVE_A_FRIEND', payload : data })
+      AddNotification("ADD_NOTIFICATION",`Friend Request Rejected`)
     })
   },[])
 

@@ -1,7 +1,7 @@
 .notifications {
   position: absolute;
   right: 0px;
-  width: 250px;
+  width: 300px;
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 100vh;

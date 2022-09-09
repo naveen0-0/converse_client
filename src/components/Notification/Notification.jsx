@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from 'react'
+import React,{ useEffect } from 'react'
 import styles from './Notification.module.css'
 import { useDispatch } from 'react-redux'
 import closeimg from '../../images/close.png'
@@ -10,9 +10,9 @@ export default function Notification({ content, id }) {
     dispatch({ type : "REMOVE_NOTIFICATION", payload:id})
   }
   
-  // useEffect(() => {
-  //   setTimeout(() => RemoveNotification(id),3000)
-  // },[])
+  useEffect(() => {
+    setTimeout(() => RemoveNotification(id),5000)
+  },[])
 
   return (
     <div className={styles.notification}>

@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React,{ useState, useContext } from 'react'
 import { useSelector } from 'react-redux'
 import styles from './FriendChatInputContainer.module.css'
 import { SocketContext } from '../../context/SocketProvider'
