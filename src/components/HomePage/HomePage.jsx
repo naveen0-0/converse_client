@@ -1,9 +1,10 @@
-import React,{ useEffect, useState } from 'react'
+import React,{ useEffect, useState, useContext } from 'react'
 import Authentication from '../Authentication/Authentication'
 import DashBoard from '../DashBoard/DashBoard'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 import SplashScreen from '../SplashScreen/SplashScreen'
+import SocketProvider from '../../context/SocketProvider'
 
 export default function HomePage() {
   const { loggedIn } = useSelector(state => state.user)
@@ -24,6 +25,6 @@ export default function HomePage() {
   }
 
   if(splash) return <SplashScreen/>
-  if(loggedIn) return <DashBoard/>
+  if(loggedIn) return <SocketProvider><DashBoard/></SocketProvider>
   return <Authentication/>
 }

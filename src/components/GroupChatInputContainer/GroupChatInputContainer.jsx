@@ -1,12 +1,14 @@
-import React,{ useState } from 'react'
+import React,{ useState, useContext } from 'react'
 import styles from './GroupChatInputContainer.module.css'
 import { useSelector } from 'react-redux'
+import { SocketContext } from '../../context/SocketProvider'
 
-export default function GroupChatInputContainer({ socket }) {
+export default function GroupChatInputContainer() {
 
   const [ message, setMessage ] = useState("")
   const group = useSelector(state => state.selectedGroup)
   const { username } = useSelector(state => state.user)
+  const { socket } = useContext(SocketContext)
 
   const sendMessage = (e) => {
     if(e.key === 'Enter' && message.trim()){

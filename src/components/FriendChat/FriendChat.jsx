@@ -1,4 +1,4 @@
-import React,{ useEffect, useState } from 'react'
+import React from 'react'
 import styles from './FriendChat.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import Hero from '../Hero/Hero'
@@ -6,10 +6,10 @@ import Messages from '../Messages/Messages'
 import backpng from '../../images/back.png'
 import FriendChatInputContainer from '../FriendChatInputContainer/FriendChatInputContainer'
 
-export default function FriendChat({ socket }) {
+export default function FriendChat() {
   const dispatch = useDispatch()
   const selectedFriends = useSelector(state => state.selectedFriends)
-  const { username,chatId } = useSelector(state => state.user)
+  const { username } = useSelector(state => state.user)
   
   const RemoveFriend = () => {
     dispatch({ type:"REMOVE_FRIEND"})
@@ -32,7 +32,7 @@ export default function FriendChat({ socket }) {
             <Messages/>
           </div>
 
-          <FriendChatInputContainer socket={socket}/>
+          <FriendChatInputContainer />
 
         </div>
       )}

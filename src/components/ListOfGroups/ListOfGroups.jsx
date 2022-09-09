@@ -1,10 +1,12 @@
-import React,{ useState } from 'react'
+import React,{ useState, useContext } from 'react'
 import styles from './ListOfGroups.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import axios from 'axios'
 import { v4 as uuidv4 } from 'uuid';
+import { SocketContext } from '../../context/SocketProvider';
 
-export default function ListOfGroups({ setSidebarActive, sidebarActive, socket }) {
+
+export default function ListOfGroups({ setSidebarActive, sidebarActive }) {
   const dispatch = useDispatch()
   const { username } = useSelector(state => state.user)
   const { serverUrl } = useSelector(state => state.serverUrl)
@@ -12,6 +14,7 @@ export default function ListOfGroups({ setSidebarActive, sidebarActive, socket }
   const groups = useSelector( state => state.groups )
   const [ buttonActive, setButtonActive ] = useState(false)
   const [ feedback, SetFeedback ] = useState("")
+  const { socket } = useContext(SocketContext)
 
   const CreateGroup = async e => {
     e.preventDefault()

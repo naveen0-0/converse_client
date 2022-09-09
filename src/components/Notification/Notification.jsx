@@ -10,9 +10,9 @@ export default function Notification({ content, id }) {
     dispatch({ type : "REMOVE_NOTIFICATION", payload:id})
   }
   
-  useEffect(() => {
-    setTimeout(() => RemoveNotification(id),3000)
-  },[])
+  // useEffect(() => {
+  //   setTimeout(() => RemoveNotification(id),3000)
+  // },[])
 
   return (
     <div className={styles.notification}>

@@ -1,13 +1,16 @@
-import React from 'react'
+import React,{ useContext, useState } from 'react'
+import { SocketContext } from '../../context/SocketProvider'
 import styles from './AddFriend.module.css'
 import axios from 'axios'
 import { useSelector } from 'react-redux'
 
-export default function AddFriend({ socket, text, setText, user, setUser, feedback, setFeedback, statusNum, setStatusNum }) {
+export default function AddFriend() {
   const { username, chatId } = useSelector(state => state.user)
   const friends = useSelector(state => state.friends)
   const { serverUrl }  = useSelector(state => state.serverUrl)
-
+  const [ text, setText ] = useState("")
+  const [ user, setUser ] = useState(null)
+  const { socket, feedback, setFeedback, statusNum, setStatusNum } = useContext(SocketContext)
 
   const SearchForAFriend = async e => {
     if(e.key === "Enter" && text.trim() && text.trim() !== username){
@@ -58,7 +61,7 @@ export default function AddFriend({ socket, text, setText, user, setUser, feedba
             <div className={styles.profileimg}>{user.username[0].toUpperCase()}</div>
             <div className={styles.username}>{user.username}</div>
           </div>
-          <button className={styles.action} onClick={statusNum===2 ? sendRequest : null}>
+          <button className={styles.action} onClick={statusNum === 2 ? sendRequest : null}>
             {feedback}
           </button>
         </div>

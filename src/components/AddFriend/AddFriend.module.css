@@ -1,13 +1,10 @@
 
 .inputcontainer{
-  width: 95%;
-  display: block;
-  /* margin: auto; */
-  margin-top: 5px;
+  display: flex;
 }
 
 .input{
-  width: 100%;
+  flex: 1;
   margin: 5px;
   outline: none;
   border: 1px solid#494949;

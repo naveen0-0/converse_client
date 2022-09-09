@@ -1,4 +1,4 @@
-import React,{ useState } from 'react'
+import React,{ useState, useContext } from 'react'
 import styles from './GroupChat.module.css'
 import { useSelector, useDispatch } from 'react-redux'
 import Hero from '../Hero/Hero'
@@ -7,9 +7,11 @@ import adduserimg from '../../images/adduser.png'
 import axios from 'axios'
 import backpng from '../../images/back.png'
 import GroupChatInputContainer from '../GroupChatInputContainer/GroupChatInputContainer'
+import { SocketContext } from '../../context/SocketProvider'
 
-export default function GroupChat({ socket, btnText, setBtnText }) {
+export default function GroupChat() {
   const dispatch = useDispatch()
+  const { btnText, socket } = useContext(SocketContext)
 
   const [ modalActive, setModalActive ] = useState(false)
   const [ friendName, setFriendName ] = useState("")
@@ -88,7 +90,7 @@ export default function GroupChat({ socket, btnText, setBtnText }) {
             <GroupMessages/>
           </div>
 
-          <GroupChatInputContainer socket={socket}/>
+          <GroupChatInputContainer />
         </div>
       )}
     </div>

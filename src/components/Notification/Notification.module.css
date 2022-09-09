@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
 
 .notification{
-  border: 1px solid #974939;
-  background-color: rgba(151, 73, 57, 0.1);
+  background:linear-gradient(to right, rgb(22, 33, 53),rgb(46, 21, 18));
+  /* background-color: rgb(10, 10, 10); */
+  box-shadow: 3px 3px 3px;
   margin: 10px;
   padding: 10px;
   border-radius: 5px;

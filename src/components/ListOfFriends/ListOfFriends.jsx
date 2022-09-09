@@ -41,10 +41,6 @@ export default function ListOfFriends({ setSidebarActive, sidebarActive }) {
         })}
       </div>
 
-      {/* <div className={styles.closeContainer} onClick={() => setSidebarActive(!sidebarActive)}>
-        <img src={closepng} alt="Close" className={styles.closeimg}/>
-      </div> */}
-
     </div>
   )
 }
