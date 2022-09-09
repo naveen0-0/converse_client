@@ -20,8 +20,8 @@ export default function Notifications() {
 
   return (
     <div className={styles.notifications}>
-      <button onClick={AddNotification}>Add Notification</button>
-      <button onClick={RemoveAll}>Remove All</button>
+      {/* <button onClick={AddNotification}>Add Notification</button>
+      <button onClick={RemoveAll}>Remove All</button> */}
       {notifications.map(note => <Notification key={note.id} {...note}/>)}
     </div>
   )
