@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import styles from './FriendChatInputContainer.module.css'
 import { SocketContext } from '../../context/SocketProvider'
 
-export default function FriendChatInputContainer({ socket }) {
+export default function FriendChatInputContainer() {
   const [ message, setMessage ] = useState("")
   const selectedFriends = useSelector(state => state.selectedFriends)
   const { username,chatId } = useSelector(state => state.user)
