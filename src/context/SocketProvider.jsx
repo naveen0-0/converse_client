@@ -121,7 +121,9 @@ export default function SocketProvider({ children }) {
       setFeedback2("")
       setOperation(false)
       setUser({})
-      setModalActive(false)
+      setTimeout(() => {
+        setModalActive(false)
+      },2000)
       AddNotification("ADD_NOTIFICATION",`${data.username} has been added to the group`)
       setBtnText("User Added")
     })
@@ -152,7 +154,8 @@ export default function SocketProvider({ children }) {
         setUser,
         user,
         setModalActive,
-        modalActive
+        modalActive,
+        AddNotification
       }}>
       {children}
     </SocketContext.Provider>

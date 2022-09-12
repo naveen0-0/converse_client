@@ -14,7 +14,8 @@ export default function ListOfGroups({ setSidebarActive, sidebarActive }) {
   const groups = useSelector( state => state.groups )
   const [ buttonActive, setButtonActive ] = useState(false)
   const [ feedback, SetFeedback ] = useState("")
-  const { socket } = useContext(SocketContext)
+  const { socket,setModalActive, AddNotification } = useContext(SocketContext)
+
 
   const CreateGroup = async e => {
     e.preventDefault()
@@ -23,6 +24,10 @@ export default function ListOfGroups({ setSidebarActive, sidebarActive }) {
     if(data.operation){
       socket.emit("join_the_created_room", data.group.groupId)
       dispatch({ type: "ADD_GROUP", payload : data.group })
+      SetFeedback(`${searchText} has been created`)
+      setTimeout(() => {
+        SetFeedback("")
+      },2000)
     }else{
       SetFeedback(data.feedback)
       setTimeout(() => {
@@ -31,6 +36,12 @@ export default function ListOfGroups({ setSidebarActive, sidebarActive }) {
     }
     setSearchText("")
     setButtonActive(false)
+  }
+
+  const updateGroup = (group) => {
+    dispatch({ type:"UPDATE_GROUP", payload: group });
+    setSidebarActive(!sidebarActive)
+    setModalActive(false)
   }
 
   return (
@@ -53,7 +64,7 @@ export default function ListOfGroups({ setSidebarActive, sidebarActive }) {
 
       <div className={styles.groups}>
         {groups.map((group, index) => 
-          <div title={group.groupName} key={index} className={styles.group} onClick={() => { dispatch({ type:"UPDATE_GROUP", payload: group });setSidebarActive(!sidebarActive) }}>
+          <div title={group.groupName} key={index} className={styles.group} onClick={() => updateGroup(group)}>
             <div className={styles.profileimg}>{group.groupName[0]}</div>
             <div className={styles.groupnamecontainer}>
               <div className={styles.groupname}>{group.groupName}</div>

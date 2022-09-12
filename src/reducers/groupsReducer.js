@@ -6,7 +6,7 @@ export const groupsReducer = (state = initialState,action) => {
       return action.payload
 
     case "ADD_GROUP":
-      return [ ...state, action.payload ]
+      return [ action.payload, ...state ]
 
     case "ADD_MESSAGE_IN_GROUPS":
       return state.map((group) => {

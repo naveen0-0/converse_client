@@ -31,8 +31,7 @@ export default function GroupChat() {
       setOperation(data.operation)
       setTimeout(() => {
         setFeedback2("")
-        setModalActive(false)
-      },2000)
+      },2500)
     }
   }
 
