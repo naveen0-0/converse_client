@@ -86,11 +86,7 @@ export default function GroupChat() {
                   onClick={() => setModalActive(!modalActive)}
                   title="Add someone to the group"
                 >
-                  <img
-                    src={adduserimg}
-                    alt="Add User"
-                    className={styles.adduserimg}
-                  />
+                  {/* Add An Image Here */}
                 </div>
               </div>
             )}
